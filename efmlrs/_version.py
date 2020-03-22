@@ -42,7 +42,7 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = ""
-    cfg.parentdir_prefix = "Efmlrs-"
+    cfg.parentdir_prefix = "efmlrs-"
     cfg.versionfile_source = "efmlrs/_version.py"
     cfg.verbose = False
     return cfg
