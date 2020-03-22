@@ -29,7 +29,7 @@ test_requirements = [
 ]
 
 setup(
-    name='EFMlrs',
+    name='efmlrs',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     description="Extracts EFMs from result file of mplrs and decompresses EFMs from efmtool and mplrs results that have been compressed with EFMlrs",
