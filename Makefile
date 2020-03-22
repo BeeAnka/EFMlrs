@@ -35,7 +35,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 EFMlrs tests
+	flake8 efmlrs tests
 
 test:
 	python setup.py test
@@ -44,7 +44,7 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source EFMlrs setup.py test
+	coverage run --source efmlrs setup.py test
 	coverage report -m
 	coverage html
 	open htmlcov/index.html

@@ -1,5 +1,5 @@
-from EFMlrs.util.data import *
-from EFMlrs.util.log import *
+from efmlrs.util.data import *
+from efmlrs.util.log import *
 
 
 def enumerate_rows(kernel):

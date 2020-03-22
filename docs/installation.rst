@@ -4,9 +4,9 @@ Installation
 
 At the command line::
 
-    $ pip install EFMlrs
+    $ pip install efmlrs
 
 Or, if you have virtualenvwrapper installed::
 
-    $ mkvirtualenv EFMlrs
-    $ pip install EFMlrs
+    $ mkvirtualenv efmlrs
+    $ pip install efmlrs

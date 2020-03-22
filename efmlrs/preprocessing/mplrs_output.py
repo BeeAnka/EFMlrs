@@ -1,4 +1,4 @@
-from EFMlrs.util.data import *
+from efmlrs.util.data import *
 
 
 def remove_reversible(smatrix, reversibilities):

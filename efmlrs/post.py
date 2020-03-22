@@ -1,13 +1,13 @@
 from argparse import ArgumentParser
 from argparse import RawDescriptionHelpFormatter
 import sys
-import EFMlrs.postprocessing.get_data as get_data
-import EFMlrs.postprocessing.decompressing as decompressing
-from EFMlrs.util.data import *
+import efmlrs.postprocessing.get_data as get_data
+import efmlrs.postprocessing.decompressing as decompressing
+from efmlrs.util.data import *
 
 
 def main(inputfile, outputfile, infofile, efmtool):
-    EFMlrs_start_decompressions()
+    efmlrs_start_decompressions()
     if efmtool == True:
         print("Decompressing EFMs from EFMTOOL")
         compressed_efms = get_data.get_efmtool_efms(inputfile)
@@ -17,7 +17,7 @@ def main(inputfile, outputfile, infofile, efmtool):
         print("Decompressing EFMs from MPLRS")
         compressed_efms = get_data.get_mplrs_efms(inputfile, infofile)
         decompressing.run(compressed_efms, infofile, outputfile)
-    EFMlrs_finish_decompressions()
+    efmlrs_finish_decompressions()
 
 
 def start(inputfile, outputfile, infofile, efmtool):

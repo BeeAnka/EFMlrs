@@ -1,4 +1,4 @@
-from EFMlrs.util.log import *
+from efmlrs.util.log import *
 
 
 def check_row(row):

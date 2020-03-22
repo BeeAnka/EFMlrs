@@ -1,6 +1,6 @@
-import EFMlrs.postprocessing.decompressions.one2many as one2many
-import EFMlrs.postprocessing.decompressions.null_space as nullspace
-import EFMlrs.postprocessing.decompressions.deadend as deadend
+import efmlrs.postprocessing.decompressions.one2many as one2many
+import efmlrs.postprocessing.decompressions.null_space as nullspace
+import efmlrs.postprocessing.decompressions.deadend as deadend
 
 
 def find_counter(file):

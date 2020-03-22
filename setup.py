@@ -40,8 +40,8 @@ setup(
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     entry_points={
         'console_scripts':[
-            'efmlrs_pre=EFMlrs.pre:start_from_command_line',
-            'efmlrs_post=EFMlrs.post:start_from_command_line'
+            'efmlrs_pre=efmlrs.pre:start_from_command_line',
+            'efmlrs_post=efmlrs.post:start_from_command_line'
             ],
         },
     include_package_data=True,

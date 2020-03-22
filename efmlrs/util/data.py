@@ -2,7 +2,7 @@ from fractions import Fraction
 import numpy as np
 import pandas as pd
 from sympy import *
-import EFMlrs.util.convert_matrix as conversion
+import efmlrs.util.convert_matrix as conversion
 
 
 def write_all(smatrix, reactions, reversibilities, metabolites, name):
@@ -201,7 +201,7 @@ def reversibilities4printing(reversibilities):
     return i
 
 
-def EFMlrs_start_compressions():
+def efmlrs_start_compressions():
     print('                          ')
     print(r'           EFMlrs     __ ')
     print(r'    (\   .-.   .-.   /_")')
@@ -211,7 +211,7 @@ def EFMlrs_start_compressions():
     print('                          ')
 
 
-def EFMlrs_finish_compressions():
+def efmlrs_finish_compressions():
     print('                          ')
     print(r'                    .-.  ')
     print(r'                  /  oo  ')
@@ -225,7 +225,7 @@ def EFMlrs_finish_compressions():
     print(r'                          ')
 
 
-def EFMlrs_start_decompressions():
+def efmlrs_start_decompressions():
     print(r'                          ')
     print(r'                    .-.  ')
     print(r'                  /  oo  ')
@@ -239,7 +239,7 @@ def EFMlrs_start_decompressions():
     print(r'                             ')
 
 
-def EFMlrs_finish_decompressions():
+def efmlrs_finish_decompressions():
     print('                          ')
     print(r'           EFMlrs     __ ')
     print(r'    (\   .-.   .-.   /_")')

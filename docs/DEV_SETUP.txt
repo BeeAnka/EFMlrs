@@ -60,7 +60,7 @@ python ./setup.py bdist_wheel
 twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
 #--- testing pip install --index for test server url --extra-index to install dependencies
-pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple EFMlrs
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple efmlrs
 
 #--- cleanup virtual environment
 pip freeze | xargs pip uninstall -y

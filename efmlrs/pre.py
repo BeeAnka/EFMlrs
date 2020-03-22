@@ -1,18 +1,18 @@
 from argparse import ArgumentParser
 from argparse import RawDescriptionHelpFormatter
 import sys
-from EFMlrs.util.log import *
-from EFMlrs.util.data import *
-import EFMlrs.preprocessing.get_data as get_data
-import EFMlrs.preprocessing.compressions.deadend as deadend
-import EFMlrs.preprocessing.compressions.one2many as one2many
-import EFMlrs.preprocessing.compressions.null_space as nullspace
-import EFMlrs.preprocessing.compressions.echelon as echelon
-import EFMlrs.preprocessing.mplrs_output as mplrs_output
+from efmlrs.util.log import *
+from efmlrs.util.data import *
+import efmlrs.preprocessing.get_data as get_data
+import efmlrs.preprocessing.compressions.deadend as deadend
+import efmlrs.preprocessing.compressions.one2many as one2many
+import efmlrs.preprocessing.compressions.null_space as nullspace
+import efmlrs.preprocessing.compressions.echelon as echelon
+import efmlrs.preprocessing.mplrs_output as mplrs_output
 
 
 def main(inputsbml, ignore_compartments, boundflag):
-    EFMlrs_start_compressions()
+    efmlrs_start_compressions()
     smatrix, reactions, reversibilities, metabolites, model, core_name = get_data.run(inputsbml, ignore_compartments,
                                                                                       boundflag)
     write_uncmp_int_matrix(core_name)
@@ -69,7 +69,7 @@ def main(inputsbml, ignore_compartments, boundflag):
     write_all(smatrix, reactions, reversibilities, metabolites, core_name + "_cmp")
     mplrs_output.run(core_name)
     write_cmp_int_matrix(core_name)
-    EFMlrs_finish_compressions()
+    efmlrs_finish_compressions()
 
 
 def start(inputsbml, ignore_compartments, bounds):

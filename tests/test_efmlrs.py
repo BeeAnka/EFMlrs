@@ -12,9 +12,9 @@ import unittest
 import tempfile
 from shutil import copyfile, rmtree
 
-import EFMlrs
-from EFMlrs import pre
-from EFMlrs import post
+import efmlrs
+from efmlrs import pre
+from efmlrs import post
 
 TEST_DIR        = ''
 TEMP_DIR        = 'test_EFMlrs'
@@ -44,7 +44,7 @@ class TestEFMlrs(unittest.TestCase):
 
         # clean up
         rmtree(TEST_DIR)
-        assert(EFMlrs.__version__)
+        assert(efmlrs.__version__)
 
     def test_post_at_ecoli5010(self):
         # create temporary working directory for test
@@ -72,7 +72,7 @@ class TestEFMlrs(unittest.TestCase):
 
         # clean up
         rmtree(TEST_DIR)
-        assert(EFMlrs.__version__)
+        assert(efmlrs.__version__)
 
     def tearDown(self):
         pass

@@ -12,4 +12,4 @@ recursive-exclude * *.py[co]
 recursive-include docs *.rst conf.py Makefile make.bat
 
 include versioneer.py
-include EFMlrs/_version.py
+include efmlrs/_version.py

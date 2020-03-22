@@ -1,8 +1,8 @@
 import cobra
 import io
 from contextlib import redirect_stderr
-import EFMlrs.preprocessing.boundaries as boundaries
-from EFMlrs.util.data import *
+import efmlrs.preprocessing.boundaries as boundaries
+from efmlrs.util.data import *
 
 
 def read_model(input_filename):

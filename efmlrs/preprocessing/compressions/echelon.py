@@ -1,5 +1,5 @@
-from EFMlrs.util.log import *
-from EFMlrs.util.data import *
+from efmlrs.util.log import *
+from efmlrs.util.data import *
 
 
 def find_redundant_metabolites(smatrix, inner_counter):
