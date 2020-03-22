@@ -1,0 +1,48 @@
+bounds 2
+deadend_1
+end
+one2many_1
+merged 71:42 reactions
+remove R36:1 keep R52:1 
+remove R54:1 keep R15:1 
+remove R52:1 keep R9:821/500 keep R15:1 
+remove R53:1 keep R13:1 keep R38:1 
+remove R35:1 keep R13:1 keep R38:1 
+remove R4:1 keep R1:1 keep R28:1 
+remove R17:1 keep R1:1 keep R28:1 
+remove R7:1 keep R0:1 keep R31:1 
+remove R2:1 keep R3:1 
+remove R30:1 keep R1:1 
+remove R39:1 keep R6:1 keep R9:713/821 
+remove R57:1 keep R5:1 
+remove R11:1 keep R3:1 
+remove R10:1 keep R18:1 
+remove R13:1 keep R14:1 
+remove R16:1 keep R0:1 keep R31:1 
+remove R19:1 keep R0:1 keep R31:1 
+remove R50:1 keep R29:1 keep R32:1 
+remove R32:1 keep R20:1 
+remove R40:1 keep R42:1 
+remove R29:1 keep R22:1 
+remove R3:1 keep R6:1 keep R9:1 keep R42:1 
+remove R41:1 keep R12:1 
+remove R12:1 keep R23:1 
+remove R47:1 keep R9:6251/713 
+remove R24:1 keep R9:1 
+remove R61:1 keep R25:1 
+remove R6:1 keep R63:1 
+remove R8:1 keep R68:1 keep R70:839/100 
+end
+nullspace_1
+R0 R1 R2 R3 R4 R5 R6 R7 R8,18:1 R9 R10 R11 R12,38:1 R13 R14 R15 R16 R17 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 R32 R33 R34 R35,36:1 R37 R39 R40 R41 
+end
+deadend_2
+end
+one2many_2
+merged 39:38 reactions
+remove R37:1 keep R8:1 keep R38:1000/839 
+end
+nullspace_2
+end
+rv: 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 1 1 0 0 
+counter 2

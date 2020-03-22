@@ -1,0 +1,67 @@
+#------------------------------------------------
+#--- Virtual Environment (pip virtualenv)
+#------------------------------------------------
+#--- create
+virtualenv venv
+
+#--- activate
+source venv/bin/activate
+
+#--- deactivate
+deactivate
+
+#------------------------------------------------
+#--- Requirements
+#------------------------------------------------
+#--- module dependencies
+pip install numpy
+pip install pandas
+pip install cobra
+pip install sympy
+
+#--- check environment
+pip freeze
+
+#- cobra==0.17.1
+#- depinfo==1.5.3
+#- future==0.18.2
+#- mpmath==1.1.0
+#- numpy==1.18.1
+#- optlang==1.4.4
+#- pandas==1.0.1
+#- pipdeptree==0.13.2
+#- python-dateutil==2.8.1
+#- python-libsbml-experimental==5.18.0
+#- pytz==2019.3
+#- ruamel.yaml==0.16.10
+#- ruamel.yaml.clib==0.2.0
+#- six==1.14.0
+#- swiglpk==4.65.1
+#- sympy==1.5.1
+
+
+#------------------------------------------------
+#--- PyPi
+#------------------------------------------------
+#--- install
+sudo apt install twine
+
+#--- on TypeError: expected string or bytes-like object
+python3 -m pip install --user --upgrade twine
+
+# for version tags with git - see also test_push.sh
+git tag -a 0.3.4 -m "initial tag"
+# source dist
+python ./setup.py sdist
+# build dist
+python ./setup.py bdist_wheel
+
+#--- testing --- https://packaging.python.org/guides/using-testpypi/
+twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+#--- testing pip install --index for test server url --extra-index to install dependencies
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple EFMlrs
+
+#--- cleanup virtual environment
+pip freeze | xargs pip uninstall -y
+
