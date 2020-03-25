@@ -62,6 +62,7 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-#environment stuff
+#my stuff
+.idea
 .DS_Store
 *kdev4
