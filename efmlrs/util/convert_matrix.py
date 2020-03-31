@@ -24,7 +24,7 @@ def get_min_smatrix(int_smatrix):
     min_smatrix = []
     for row in int_smatrix:
         greates_divisor = reduce(gcd, row)
-        if greates_divisor != 1:
+        if greates_divisor > 1:
             new_row = [int(val / greates_divisor) for val in row]
             min_smatrix.append(new_row)
         else:

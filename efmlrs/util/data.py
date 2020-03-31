@@ -194,7 +194,7 @@ def bounds_print(bounds):
 
 
 def reversibilities4printing(reversibilities):
-    i = 1
+    i = 0
     for val in reversibilities:
         if val is True:
             i += 1

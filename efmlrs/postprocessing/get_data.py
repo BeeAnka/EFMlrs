@@ -63,7 +63,7 @@ def parse_lrs(inputfile, reversibilities):
         elif efms is not None:
             uncmp_efms.append(efms)
             if len(uncmp_efms) % 10000 == 0:
-                print("EFMS extracted:" + str(len(uncmp_efms)))
+                print("EFMs extracted:" + str(len(uncmp_efms)))
 
     mplrs_output.close()
     return uncmp_efms
