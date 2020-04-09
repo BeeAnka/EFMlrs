@@ -23,8 +23,8 @@ def check_row(row):
 def check_reactions(smatrix, i, reversibilities):
     rm_reactions = []
     index = 0
-    for rev_info in smatrix.row(i):
-        if rev_info != 0:
+    for val in smatrix.row(i):
+        if val != 0:
             if reversibilities[index] == 0:
                 rm_reactions.append(index)
             else:

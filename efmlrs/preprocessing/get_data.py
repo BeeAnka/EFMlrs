@@ -61,6 +61,16 @@ def compartments_2_rm(model, comp_list):
             rm_metas_in_specified_compartment(comp, model)
         return model
 
+def orphaned_metas_rm(model):
+    metabolites = [meta.id for meta in model.metabolites]
+    orphaned_metas = []
+    for meta in metabolites:
+        meta_id = model.metabolites.get_by_id(meta)
+        involved_reas = len(meta_id.reactions)
+        if involved_reas == 0:
+            orphaned_metas.append(meta_id)
+    model.remove_metabolites(orphaned_metas)
+    return model
 
 def get_smatrix(model):
     matrix = cobra.util.array.create_stoichiometric_matrix(model)
@@ -90,6 +100,7 @@ def run(inputfile, ignore_compartments, boundflag):
 
     print("Ignoring compartments:", ignore_compartments)
     model = compartments_2_rm(model, ignore_compartments)
+    model = orphaned_metas_rm(model)
 
     model.reactions.sort()
     model.metabolites.sort()

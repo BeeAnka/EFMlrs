@@ -33,9 +33,9 @@ def count_check(row):
     return False
 
 
-def get_index(row, header):
-    pos = [(i, abs(j)) for i, j in zip(header, row) if j > 0]
-    neg = [(i, abs(j)) for i, j in zip(header, row) if j < 0]
+def get_index(row, index):
+    pos = [(i, abs(j)) for i, j in zip(index, row) if j > 0]
+    neg = [(i, abs(j)) for i, j in zip(index, row) if j < 0]
     if len(pos) == 1:
         return pos, neg
     else:

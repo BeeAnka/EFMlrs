@@ -68,29 +68,29 @@ def test_results(column_index, index_multiples, smatrix, reversibilities):
 
 
 def merge_multiples(smatrix, reversibilities, reactions, index_multiples):
-    smatrix_after = Matrix()
-    reversibilities_after = []
-    reactions_after = []
-    INFO = []
+    smatrix_reduced = Matrix()
+    reversibilities_reduced = []
+    reactions_reduced = []
+    merge_info = []
     j = 0
 
     for column_index in range(0, smatrix.shape[1]):
         use_ori, merged_rea, new_rev_info, dropped_rea, factor, reversibility_flag = test_results(column_index, index_multiples, smatrix, reversibilities)
 
         if use_ori is True:
-            smatrix_after = smatrix_after.col_insert(j, smatrix.col(column_index))
+            smatrix_reduced = smatrix_reduced.col_insert(j, smatrix.col(column_index))
 
-            reversibilities_after.append(new_rev_info)
-            reactions_after.append(reactions[column_index])
-            INFO.append("R" + str(column_index))
+            reversibilities_reduced.append(new_rev_info)
+            reactions_reduced.append(reactions[column_index])
+            merge_info.append("R" + str(column_index))
             j += 1
         else:
             if reversibility_flag is False and factor < 0:
                 log_delete(reactions[column_index], reactions[dropped_rea])
             else:
                 if len(merged_rea):
-                    smatrix_after = smatrix_after.col_insert(j, merged_rea)
-                    reversibilities_after.append(new_rev_info)
+                    smatrix_reduced = smatrix_reduced.col_insert(j, merged_rea)
+                    reversibilities_reduced.append(new_rev_info)
                     result, newnames = log_merge(reactions[dropped_rea], reactions[column_index], factor)
                     if result is False:
                         if log_merge(reactions[column_index], reactions[dropped_rea], factor) is False:
@@ -101,8 +101,8 @@ def merge_multiples(smatrix, reversibilities, reactions, index_multiples):
                     if len(newnames) > 0:
                         reactions[column_index] = newnames[0]
 
-                    reactions_after.append(reactions[column_index])
-                    INFO.append("R" + str(column_index) + "," + str() + str(dropped_rea) + ":" + str(factor))
+                    reactions_reduced.append(reactions[column_index])
+                    merge_info.append("R" + str(column_index) + "," + str() + str(dropped_rea) + ":" + str(factor))
                     j += 1
 
             for index in reversed(range(0, len(index_multiples))):
@@ -112,7 +112,7 @@ def merge_multiples(smatrix, reversibilities, reactions, index_multiples):
                 if i1 == column_index or i2 == column_index or i1 == dropped_rea or i2 == dropped_rea:
                     del index_multiples[index]
 
-    return smatrix_after, reversibilities_after, reactions_after, INFO
+    return smatrix_reduced, reversibilities_reduced, reactions_reduced, merge_info
 
 
 def get_index_zero_rows(smatrix):
