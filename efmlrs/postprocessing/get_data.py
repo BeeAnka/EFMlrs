@@ -1,4 +1,10 @@
 def get_rev_info(infofile):
+    """
+    Reads info file and stores reaction reversibility information in a list.
+
+    :param infofile: info file created during preprocessing
+    :return: list rev_info
+    """
     file = open(infofile, "r")
     rev_info = []
     for line in file:
@@ -14,6 +20,12 @@ def get_rev_info(infofile):
 
 
 def remove_zeros(row):
+    """
+    Checks if extracted efm (row) contains only zeros.
+
+    :param list row: extracted efm
+    :return: row or None
+    """
     for val in row:
         if val != 0:
             return row
@@ -21,8 +33,16 @@ def remove_zeros(row):
 
 
 def parse_lrs(inputfile, reversibilities):
+    """
+    Parses mplrs output file, merges splitted reactions, removes rows containing only zeros and stores compressed efms
+    in a list of lists.
+
+    :param inputfile: mplrs output file
+    :param list reversibilities: list of reaction reversibilities
+    :return: list compressed_efms - list of lists with compressed efms
+    """
     mplrs_output = open(inputfile, "r")
-    uncmp_efms = []
+    compressed_efms = []
     zero_counter = 0
     found_begin = False
 
@@ -56,26 +76,40 @@ def parse_lrs(inputfile, reversibilities):
             j += 1
             i += 1
 
-        efms = remove_zeros(row)
+        efm = remove_zeros(row)
 
-        if efms is None:
+        if efm is None:
             zero_counter += 1
-        elif efms is not None:
-            uncmp_efms.append(efms)
-            if len(uncmp_efms) % 10000 == 0:
-                print("EFMs extracted:" + str(len(uncmp_efms)))
+        elif efm is not None:
+            compressed_efms.append(efm)
+            if len(compressed_efms) % 10000 == 0:
+                print("EFMS extracted:" + str(len(compressed_efms)))
 
     mplrs_output.close()
-    return uncmp_efms
+    return compressed_efms
 
 
 def get_mplrs_efms(inputfile, infofile):
+    """
+    Entry poitn for get_data for mplrs. Parses mplrs output file, merges splitted reactions, removes rows containing
+    only zeros and stores compressed efms in a list of lists.
+
+    :param inputfile: mplrs output file
+    :param infofile: info file created during preprocessing
+    :return: list compressed_efms
+    """
     reversibilities = get_rev_info(infofile)
     compressed_efms = parse_lrs(inputfile, reversibilities)
     return compressed_efms
 
 
 def get_efmtool_efms(inputfile):
+    """
+    Entry point for get_data for efmtool. Reads efmtool output file and stores compressed efms in a list of lists.
+
+    :param inputfile: efmtool output file
+    :return: list compressed_efms
+    """
     ifile = open(inputfile, "r")
     compressed_efms = []
     for line in ifile:

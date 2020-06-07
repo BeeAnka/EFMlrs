@@ -1,7 +1,14 @@
 from efmlrs.util.data import *
 
 
-def remove_reversible(smatrix, reversibilities):
+def split_reversible_reas(smatrix, reversibilities):
+    """
+    Splits all reversible reactions into two single reactions. One for forward and one for backward.
+
+    :param smatrix: list of lists of stoichiometric matrix
+    :param reversibilities: list of reaction reversibilities
+    :return: list of lists of reconfigured stoichiometric matrix
+    """
     reconfigured_smatrix = []
 
     for line in smatrix:
@@ -16,49 +23,76 @@ def remove_reversible(smatrix, reversibilities):
     return reconfigured_smatrix
 
 
-def write_header(file, name):
-    file.write("* " + name + "\n")
-    file.write("H-representation" + "\n")
+def write_header(mplrs_file, core_name):
+    """
+    Writes header for mplrs input file.
+
+    :param mplrs_file: path to mplrs input file
+    :param core_name: path to input file without extensions
+    :return: None
+    """
+    mplrs_file.write("* " + core_name + "\n")
+    mplrs_file.write("H-representation" + "\n")
 
 
-def write_smatrix(file, smatrix):
-    d = len(smatrix[0])
-    s = len(smatrix)
+def write_smatrix(mplrs_file, reconf_smatrix):
+    """
+    Writes reconfigured stoichiometric matrix, unity matrix and ending to mplrs input file.
+
+    :param mplrs_file: path to mplrs input file
+    :param reconf_smatrix: list of lists of reconfigured stoichiometric matrix
+    :return: None
+    """
+    d = len(reconf_smatrix[0])
+    s = len(reconf_smatrix)
     m = s + d
 
-    file.write("linearity " + str(s))
+    mplrs_file.write("linearity " + str(s))
     for i in range(1, s + 1):
-        file.write(" " + str(i))
-    file.write("\n")
-    file.write("begin" + "\n")
-    file.write(str(m) + " " + str((d + 1)) + " rational \n")
+        mplrs_file.write(" " + str(i))
+    mplrs_file.write("\n")
+    mplrs_file.write("begin" + "\n")
+    mplrs_file.write(str(m) + " " + str((d + 1)) + " rational \n")
 
-    for line in smatrix:
-        file.write(format(0) + " ")
+    for line in reconf_smatrix:
+        mplrs_file.write(format(0) + " ")
         for val in line:
-            file.write(format(val) + " ")
-        file.write("\n")
+            mplrs_file.write(format(val) + " ")
+        mplrs_file.write("\n")
 
     for i in range(0, d):
-        file.write(format(0) + " ")
+        mplrs_file.write(format(0) + " ")
         for j in range(0, d):
             if i == j:
-                file.write(format(1) + " ")
+                mplrs_file.write(format(1) + " ")
             else:
-                file.write(format(0) + " ")
-        file.write("\n")
-    file.write("end" + "\n")
+                mplrs_file.write(format(0) + " ")
+        mplrs_file.write("\n")
+    mplrs_file.write("end" + "\n")
 
 
-def write_lrs(name, reconf_smatrix):
-    name += ".ine"
-    mplrs_file = open(name, "w")
-    write_header(mplrs_file, name)
+def write_lrs(core_name, reconf_smatrix):
+    """
+    Write input file for mplrs algorithm.
+
+    :param core_name: path to input file without extensions
+    :param reconf_smatrix: list of lists of reconfigured stoichiometric matrix
+    :return: None
+    """
+    core_name += ".ine"
+    mplrs_file = open(core_name, "w")
+    write_header(mplrs_file, core_name)
     write_smatrix(mplrs_file, reconf_smatrix)
     mplrs_file.close()
 
 
 def run(core_name):
+    """
+    Entry point for mplrs_output. Creates input file from sfile and rvfile suitable for mplrs algorithm.
+
+    :param core_name: path to input file without extensions
+    :return: None
+    """
     smatrix = read_sfile(core_name + "_cmp")
     reversibilities = read_rvfile(core_name + "_cmp")
 
@@ -66,5 +100,5 @@ def run(core_name):
         print("*** SMATRIX EMPTY! ***")
         print("*** NO INE FILE CREATED! ***")
         return
-    reconfigured_smatrix = remove_reversible(smatrix, reversibilities)
+    reconfigured_smatrix = split_reversible_reas(smatrix, reversibilities)
     write_lrs(core_name, reconfigured_smatrix)

@@ -2,6 +2,15 @@ from fractions import Fraction
 
 
 def parse_info(file):
+    """
+    Reads decompression information from infofile and builds decompression list for one2many compressions.
+
+    :param file: infofile automatically created during compressions, containing all information for decompressions
+    :return:
+        - iterations[::-1] - list of list of tuples containing information on merged reactions and merge factor
+        - post - int equal to the amount of reactions before compressions
+        - pre - int equal to the amount of reactions after compressions
+    """
     iterations = []
     tmp = []
     post = 0
@@ -35,6 +44,13 @@ def parse_info(file):
 
 
 def build_merge_mapping(iterations, post):
+    """
+    Builds dictionary containing index and merge factor for all reactions.
+
+    :param list iterations: list of list of tuples containing information on merged reactions and merge factor
+    :param int post: int equal to the amount of reactions before compressions
+    :return: mapping: dictionary containing index and merge factor for all reactions
+    """
     insertions = []
     for i in iterations:
         index = i[0][0]
@@ -50,49 +66,31 @@ def build_merge_mapping(iterations, post):
     return mapping
 
 
-def demerge(efms_fileName, output_fileName, mapping, iterations, post_len):
-    print(efms_fileName)
-    input = open(efms_fileName, "r")
-    output = open(output_fileName, "w")
-
-    for line in input:
-        compressed = line.strip().split()
-        target = [None] * post_len
-
-        for i in range(0, len(compressed)):
-            target[mapping[i]] = Fraction(compressed[i])
-
-        for iter in iterations:
-            merged_index, merged_factor = iter[0]
-            total = 0
-            for index, factor in iter[1:]:
-                total += target[index]
-            target[merged_index] = total / merged_factor
-
-            for index, factor in iter[1:]:
-                target[index] /= factor
-
-        for i in target:
-            output.write(str(float(i)) + " ")
-        output.write("\n")
-    input.close()
-    output.close()
-
-
 def decompressions(cmp_efm, mapping, iterations, post):
-    target = [None] * post
+    """
+    Decompresses the part of the current compressed efm that has been compressed during one2many compression. This is
+    done by splitting reactions that have been merged during nullspace into two reactions. Therefore the merged reaction
+    is divided through the merge factor that has been used during one2many compressions.
+
+    :param list cmp_efm: list containing efm for decompression
+    :param dict mapping: dictionary containing index and merge factor for all reactions
+    :param list iterations: list of list of tuples containing information on merged reactions and merge factor
+    :param int post: int equal to the amount of reactions before compressions
+    :return: decmp_efm list containing current efm with decompressed one2many part
+    """
+    decmp_efm = [None] * post
     for i in range(0, len(cmp_efm)):
-        target[mapping[i]] = cmp_efm[i]
+        decmp_efm[mapping[i]] = cmp_efm[i]
 
     for it in iterations:
         merged_index, merged_factor = it[0]
         total = 0
 
         for index, factor in it[1:]:
-            total += target[index]
-        target[merged_index] = total / merged_factor
+            total += decmp_efm[index]
+        decmp_efm[merged_index] = total / merged_factor
 
         for index, factor in it[1:]:
-            target[index] /= factor
+            decmp_efm[index] /= factor
 
-    return target
+    return decmp_efm

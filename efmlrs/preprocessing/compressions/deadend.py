@@ -2,18 +2,25 @@ from efmlrs.util.log import *
 
 
 def check_row(row):
+    """
+    Checks if rows qualifies as deadend metabolite. If row consists of only zeros and either positive
+    or negative entries, it is a deadend metabolite and functions returns true.
+
+    :param row: row of stoichiometric matrix
+    :return: bool
+    """
     state = 0
-    for j in row:
+    for val in row:
         if state == 0:
-            state = j
+            state = val
             continue
         if state < 0:
-            if j <= 0:
+            if val <= 0:
                 continue
             else:
                 return False
         if state > 0:
-            if j >= 0:
+            if val >= 0:
                 continue
             else:
                 return False
@@ -21,6 +28,15 @@ def check_row(row):
 
 
 def check_reactions(smatrix, i, reversibilities):
+    """
+    Checks if corresponding reactions to a deadend metabolite are irreversible.
+    Returns list of corresponding irreversible reactions to be removed.
+
+    :param smatrix: sympy matrix that contains the stoichiometric matrix
+    :param int i: index of deadend metabolite
+    :param list reversibilities: list of reaction reversibilities
+    :return: list of reaction names to be removed from stoichiometric matrix
+    """
     rm_reactions = []
     index = 0
     for val in smatrix.row(i):
@@ -34,6 +50,16 @@ def check_reactions(smatrix, i, reversibilities):
 
 
 def find_deadends(smatrix, reversibilities):
+    """
+    Checks all rows of stoichiometric matrix if they are deadend metabolites.
+    Checks if corresponding reactions are irreversible.
+
+    :param smatrix: sympy matrix that contains the stoichiometric matrix
+    :param list reversibilities: list of reaction reversibilities
+    :return:
+        - remove_reactions - list of reaction names that will be removed
+        - remove_metabolites - list of metabolite names that will be removed
+    """
     remove_reactions = []
     remove_metabolites = []
 
@@ -54,6 +80,14 @@ def find_deadends(smatrix, reversibilities):
 
 
 def write_deadend_info(core_name, outer_counter, removedReactions):
+    """
+    Writes compression information to *.info file for decompression during post-processing.
+
+    :param str core_name: string that consists of path to and name of the input file excluding file extension
+    :param int outer_counter: int that counts how many iterative steps with all compressions have been performed
+    :param list removedReactions: list of removed reaction indices
+    :return: None
+    """
     info_file_name = core_name + ".info"
     file = open(info_file_name, "a")
     file.write("deadend_" + str(outer_counter) + "\n")
@@ -67,6 +101,25 @@ def write_deadend_info(core_name, outer_counter, removedReactions):
 
 
 def run(smatrix, reactions, reversibilities, metabolites, core_name, outer_counter):
+    """
+    Entry point for deadend compression. Finds and removes deadend metabolites and corresponding reaction that only
+    contain zeros after a deadend metabolite is removed. This is done iteratively as long as deadend metabolites or
+    corresponding reactions are found in the stoichiometric matrix. Writes information on removed reactions and
+    metabolites to compression log.
+
+    :param smatrix: sympy matrix that contains the stoichiometric matrix
+    :param list reactions: list of reaction names
+    :param list reversibilities: list of reaction reversibilities
+    :param list metabolites: list of metabolite names
+    :param str core_name: string that consists of path to and name of the input file excluding file extension
+    :param int outer_counter: int that counts how many iterative steps with all compressions have been performed
+    :return:
+        - smatrix - sympy matrix reduced stoichiometric matrix
+        - reactions - list of reduced reactions names
+        - reversibilities - list of reduced reaction reversibilities
+        - metabolites - list of reduced metabolite names
+    """
+
     log_module()
     inner_counter = 1
     removed_reactions = []

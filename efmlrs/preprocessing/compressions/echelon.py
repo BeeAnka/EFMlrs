@@ -3,6 +3,14 @@ from efmlrs.util.data import *
 
 
 def find_redundant_metabolites(smatrix, inner_counter):
+    """
+    Calculates the reduced row echelon form of the stoichiometric matrix. Finds metabolites that are redundant due to
+    conservation relations.
+
+    :param smatrix: sympy matrix that contains the stoichiometric matrix
+    :param int inner_counter: integer that counts iterative steps of nullspace compression
+    :return: list redundant_metas: list of metabolites to be removed
+    """
     print("Start reduced row echelon form calculations",str(inner_counter),". This may take a while")
     echelon = smatrix.T.rref(simplify=True, pivots=False)
     print("Done reduced row echelon form calculations.")
@@ -20,6 +28,17 @@ def find_redundant_metabolites(smatrix, inner_counter):
 
 
 def remove_redundant_metabolites(smatrix, metabolites, redundant_metas):
+    """
+    Removes redundant metabolites from stoichiometric matrix and from list of metabolite names. Writes compression
+    information to log file. (https://academic.oup.com/bioinformatics/article/24/19/2229/246674)
+
+    :param smatrix: sympy matrix that contains the stoichiometric matrix
+    :param list metabolites: list of metabolite names
+    :param list redundant_metas: list of metabolites to be removed
+    :return:
+        - smatrix - sympy matrix reduced stoichiometric matrix
+        - metabolites - list of reduced metabolite names
+    """
     for i in reversed(redundant_metas):
         log_delete_meta(metabolites[i])
         del (metabolites[i])
@@ -28,6 +47,16 @@ def remove_redundant_metabolites(smatrix, metabolites, redundant_metas):
 
 
 def run(smatrix, metabolites):
+    """
+    Entry point for echelon compression. Iteratively finds inconsistencies due to conservation relations of metabolites
+    in the reduced row echelon form of the stoichiometric matrix and removes them.
+
+    :param smatrix: sympy matrix that contains the stoichiometric matrix
+    :param list metabolites: list of metabolite names
+    :return:
+        - smatrix - sympy matrix reduced stoichiometric matrix
+        - metabolites - list of reduced metabolite names
+    """
     log_module()
     inner_counter = 1
 

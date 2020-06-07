@@ -12,6 +12,18 @@ import efmlrs.preprocessing.mplrs_output as mplrs_output
 
 
 def main(inputsbml, ignore_compartments, boundflag):
+    """
+    Main script of preprocessing part of EFMlrs. Calls all other scripts. Compressions are being done iteratively as
+    long as compressions can be found. Loop breaks after one loop with no changes in length of metabolites or reactions.
+    Writes uncompressed and compressed output files including additional versions of the sfile with integers
+    (instead of fractions) to be compatible with efmtool. Writes compressed input file for mplrs algorithm. Writes info
+    file that is needed for decompressions and log file that contains all information on the applied compressions.
+
+    :param inputsbml: path to sbml input file that contains the metabolic model
+    :param ignore_compartments: list of compartments to ignore
+    :param boundflag: bool flag when additional bounds should be taken into account
+    :return: None
+    """
     efmlrs_start_compressions()
     smatrix, reactions, reversibilities, metabolites, model, core_name = get_data.run(inputsbml, ignore_compartments,
                                                                                       boundflag)
@@ -73,6 +85,14 @@ def main(inputsbml, ignore_compartments, boundflag):
 
 
 def start(inputsbml, ignore_compartments, bounds):
+    """
+    Takes all parameters form commandline, checks if parameters are okay and if everything is fine initialises log file
+    and calls main function if an error occurs an exception is raised and ends the program.
+    :param inputsbml: path to sbml input file that contains the metabolic model
+    :param ignore_compartments: list of compartments to ignore
+    :param bounds: bool flag when additional bounds should be taken into account
+    :return: None
+    """
     try:
         log_init(inputsbml[:-4])
         main(inputsbml, ignore_compartments, bounds)
@@ -84,6 +104,11 @@ def start(inputsbml, ignore_compartments, bounds):
 
 
 def start_from_command_line():
+    """
+    Entry point for preprocessing EFMlrs. Contains all information and arguments for command line call.
+    Calls start function.
+    :return: None
+    """
     usage = '''usage: efmlrs_pre -i <metabolic_model>.xml [--ignore_compartments <compartment name>] [--bounds]'''
     parser = ArgumentParser(prog='EFMlrs', description='Process information on metabolic model from sbml,\n'
                                                        'compress stoichiometric matrix and create all necessary files\n'

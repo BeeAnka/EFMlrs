@@ -3,10 +3,19 @@ import efmlrs.postprocessing.decompressions.null_space as nullspace
 import efmlrs.postprocessing.decompressions.deadend as deadend
 
 
-def find_counter(file):
+def find_counter(infofile):
+    """
+    Parses compression info and stores information on how many compression rounds were done during preprocessing
+    and how many additional bounds have been applied.
+
+    :param infofile: file automatically created during compressions, containing all information for decompressions
+    :return:
+        - round_counter - int number of compression rounds
+        - bounds - int number of bounds
+    """
     round_counter = 0
     bounds = 0
-    file = open(file, "r")
+    file = open(infofile, "r")
     for line in file:
         if line.startswith("bounds"):
             bounds = line[7]
@@ -16,10 +25,18 @@ def find_counter(file):
     return int(round_counter), int(bounds)
 
 
-def build_reverse_mapping(info, counter):
+def build_reverse_mapping(infofile, counter):
+    """
+    Reads compression information form infofile and builds a mapping for deompressions which is in reversed order of
+    the previously applied compressions.
+
+    :param infofile: file automatically created during compressions, containing all information for decompressions
+    :param int counter: number of compression rounds
+    :return: mappings - list of different tuple with compression information for each compression step
+    """
     mappings = []
     for i in reversed(range(1, counter + 1)):
-        file = open(info, "r")
+        file = open(infofile, "r")
         tmp = []
         DE = False
         O2M = False
@@ -58,6 +75,14 @@ def build_reverse_mapping(info, counter):
 
 
 def normalize_efms(decompressed, bound_info):
+    """
+    Only called if model had additional boundaries. Removes lambda vector entry and additional boundary reactions from
+    current efm and normalizes it.
+
+    :param list decompressed: current efm as list
+    :param int bound_info: number of additional bounds
+    :return: decompressed: current efm as list
+    """
     lambda_val = decompressed[-1]
     del decompressed[-(bound_info + 1):]
     if lambda_val > 1:
@@ -68,6 +93,13 @@ def normalize_efms(decompressed, bound_info):
 
 
 def write_decompressed_efms(decompressed, outputfile):
+    """
+    Writes final decompressed efm to user specified output file.
+
+    :param decompressed: current efm as list
+    :param outputfile: user specified filed to write decompressed files in
+    :return: None
+    """
     for val in decompressed:
         val = float(val)
         outputfile.write(str(val) + " ")
@@ -75,6 +107,17 @@ def write_decompressed_efms(decompressed, outputfile):
 
 
 def decompressing(compressed_efms, outputfile, mappings, bound_info):
+    """
+    Iteratively decompresses one efm after another by applying decompressions according to decompression information
+    stored in mappings. If model had additional boundaries: removes lambda vector entry and additional boundary
+    reactions from current efm and normalizes it. Writes final decompressed efm to user specified output file.
+
+    :param list compressed_efms: list of lists containing compressed efms
+    :param outputfile: user specified filed to write decompressed files in
+    :param mappings: list of different tuples with compression information for each compression step
+    :param int bound_info: number of additional bounds
+    :return: None
+    """
     ofile = open(outputfile, "w")
     count = 0
 
@@ -105,8 +148,21 @@ def decompressing(compressed_efms, outputfile, mappings, bound_info):
     print("Decompressed EFMs:", count)
 
 
-def run(compressed_efms, compression_infos, outputfile):
-    counter, bounds = find_counter(compression_infos)
-    mappings = build_reverse_mapping(compression_infos, counter)
+def run(compressed_efms, infofile, outputfile):
+    """
+    Entry point for decompressing. Reads compression information form infofile and builds a mapping for deompressions
+    which is in reversed order of the previously applied compressions.  Iteratively decompresses one efm after another
+    by applying decompressions according to decompression information stored in mappings. If model had additional
+    boundaries: removes lambda vector entry and additional boundary reactions from current efm and normalizes it.
+    Writes final decompressed efm to user specified output file.
+
+    :param infofile: file automatically created during compressions, containing all information for decompressions
+    :param list compressed_efms: compressed efms
+    :param compression_infos: info file created during preprocessing
+    :param outputfile: path to output file
+    :return: None
+    """
+    counter, bounds = find_counter(infofile)
+    mappings = build_reverse_mapping(infofile, counter)
     print("Start decompressions")
     decompressing(compressed_efms, outputfile, mappings, bounds)

@@ -1,3 +1,6 @@
+"""
+Collection of small scripts for creating log file.
+"""
 import inspect
 
 
