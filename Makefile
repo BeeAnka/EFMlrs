@@ -52,7 +52,7 @@ coverage:
 docs:
 	rm -f docs/EFMlrs.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ EFMlrs
+	sphinx-apidoc -o docs/ efmlrs
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html

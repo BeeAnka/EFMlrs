@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # EFMlrs documentation build configuration file, created by
@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'EFMlrs'
+project = u'efmlrs'
 copyright = u'2020, Bianca Buchner'
 
 # The version info for the project you're documenting, acts as replacement
@@ -239,7 +239,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'EFMlrs',
+    ('index', 'efmlrs',
      u'EFMlrs Documentation',
      [u'Bianca Buchner'], 1)
 ]
@@ -254,10 +254,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'EFMlrs',
+    ('index', 'efmlrs',
      u'EFMlrs Documentation',
      u'Bianca Buchner',
-     'EFMlrs',
+     'efmlrs',
      'One line description of project.',
      'Miscellaneous'),
 ]
