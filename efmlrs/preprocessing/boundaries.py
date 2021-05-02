@@ -177,7 +177,6 @@ def build_slack_metas_03(bounds):
 
 
 def building_slack_metabolites(bounds, reactions):
-    # TODO rename
     """
     Builds slack metabolites. Consists of three parts. First part builds list with length of original matrix and
     coefficients according to lower or upper bound. Second part build entries for slack reactions length equals number
@@ -189,16 +188,16 @@ def building_slack_metabolites(bounds, reactions):
     :return: list slack_metas of lists with new build slack metabolites
     """
     slack_metas_1 = build_slack_metas_01(bounds, reactions)
-    slack_reas_2 = build_slack_metas_02(bounds)
+    slack_metas_2 = build_slack_metas_02(bounds)
     slack_metas_3 = build_slack_metas_03(bounds)
     slack_metas = []
     for i in range(len(bounds)):
-        tmp = slack_metas_1[i] + slack_reas_2[i] + slack_metas_3[i]
+        tmp = slack_metas_1[i] + slack_metas_2[i] + slack_metas_3[i]
         slack_metas.append(tmp)
     return slack_metas
 
 
-def extend_smatrix_2(slack_metas, smatrix_extended_1):
+def extend_smatrix_2(slack_metas, smatrix_extended):
     """
     Extends stoichiometric matrix by new build slack metabolites.
 
@@ -207,8 +206,8 @@ def extend_smatrix_2(slack_metas, smatrix_extended_1):
     :return: new build smatrix with slack reactions and slack metabolites
     """
     for i in range(len(slack_metas)):
-        smatrix_extended_2 = np.vstack([smatrix_extended_1, slack_metas[i]])
-    return smatrix_extended_2
+        smatrix_extended = np.vstack([smatrix_extended, slack_metas[i]])
+    return smatrix_extended
 
 
 def build_new_smatrix(smatrix, bounds, reactions):
@@ -224,8 +223,7 @@ def build_new_smatrix(smatrix, bounds, reactions):
     extended_smatrix_1 = extend_smatrix_1(smatrix, bounds)
     slack_metas = building_slack_metabolites(bounds, reactions)
     extended_smatrix_2 = extend_smatrix_2(slack_metas, extended_smatrix_1)
-    new_smatrix = convert_float2fraction(extended_smatrix_2)
-    return new_smatrix
+    return extended_smatrix_2
 
 
 def build_new_metas(bounds, meta_ori):
@@ -290,7 +288,7 @@ def run(model, smatrix, reactions, reversibilities, metabolites):
     if bool(bound_info) is True:
         bounds = format_bounds(bound_info)
         bound_counter = len(bounds)
-        print("Found", bound_counter, "additional bounds in", model.name + ":")
+        print("Found", bound_counter, "additional bounds:")
         bounds_print(bounds)
 
         new_smatrix = build_new_smatrix(smatrix, bounds, reactions)
@@ -303,4 +301,3 @@ def run(model, smatrix, reactions, reversibilities, metabolites):
         print("ERROR: ADDITIONAL BOUNDS SET IN PROGRAM CALL BUT NO ADDITIONAL BOUNDS FOUND IN SBML FILE")
         print("EXITING PROGRAM")
         exit(1)
-

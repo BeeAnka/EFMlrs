@@ -1,5 +1,5 @@
-import efmlrs.postprocessing.decompressions.one2many as one2many
-import efmlrs.postprocessing.decompressions.null_space as nullspace
+import efmlrs.postprocessing.decompressions.many2one as many2one
+import efmlrs.postprocessing.decompressions.nullspace as nullspace
 import efmlrs.postprocessing.decompressions.deadend as deadend
 
 
@@ -52,12 +52,12 @@ def build_reverse_mapping(infofile, counter):
                     for reactions in deadend_cmps:
                         tmp.append(("deadend", reactions))
 
-            if line.startswith("one2many_" + str(i)):
+            if line.startswith("many2one_" + str(i)):
                 O2M = True
-                iterations, post, pre = one2many.parse_info(file)
+                iterations, post, pre = many2one.parse_info(file)
                 if post != pre:
-                    rea_mapping = one2many.build_merge_mapping(iterations, post)
-                    tmp.append(("o2many", (rea_mapping, iterations, post)))
+                    rea_mapping = many2one.build_merge_mapping(iterations, post)
+                    tmp.append(("m2o", (rea_mapping, iterations, post)))
 
             if line.startswith("nullspace_" + str(i)):
                 NS = True
@@ -85,7 +85,7 @@ def normalize_efms(decompressed, bound_info):
     """
     lambda_val = decompressed[-1]
     del decompressed[-(bound_info + 1):]
-    if lambda_val > 1:
+    if lambda_val != 1 and lambda_val != 0:
         new_compressed = [val / lambda_val for val in decompressed]
         return new_compressed
     else:
@@ -127,9 +127,9 @@ def decompressing(compressed_efms, outputfile, mappings, bound_info):
             if infotype == "nullspace":
                 decompressed = nullspace.decompressions(decompressed, mappinginfo)
 
-            elif infotype == "o2many":
+            elif infotype == "m2o":
                 mapping, iterations, post = mappinginfo
-                decompressed = one2many.decompressions(decompressed, mapping, iterations, post)
+                decompressed = many2one.decompressions(decompressed, mapping, iterations, post)
 
             elif infotype == "deadend":
                 decompressed = deadend.decompressions(decompressed, mappinginfo)

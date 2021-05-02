@@ -5,9 +5,10 @@ from efmlrs.util.log import *
 from efmlrs.util.data import *
 import efmlrs.preprocessing.get_data as get_data
 import efmlrs.preprocessing.compressions.deadend as deadend
-import efmlrs.preprocessing.compressions.one2many as one2many
-import efmlrs.preprocessing.compressions.null_space as nullspace
+import efmlrs.preprocessing.compressions.many2one as many2one
+import efmlrs.preprocessing.compressions.nullspace as nullspace
 import efmlrs.preprocessing.compressions.echelon as echelon
+import efmlrs.preprocessing.mplrs_output as mplrs_output
 import efmlrs.preprocessing.mplrs_output as mplrs_output
 
 
@@ -27,10 +28,10 @@ def main(inputsbml, ignore_compartments, boundflag):
     efmlrs_start_compressions()
     smatrix, reactions, reversibilities, metabolites, model, core_name = get_data.run(inputsbml, ignore_compartments,
                                                                                       boundflag)
-    write_uncmp_int_matrix(core_name)
+    mplrs_output_uncmp.run(core_name)
     rev_count = reversibilities4printing(reversibilities)
-    print(model.name, "consists of", smatrix.shape[1], "reactions (", rev_count, "reversible ) and", smatrix.shape[0],
-          "metabolites before compressions.")
+    print("Uncompressed network size:", smatrix.shape[1], "reactions (", rev_count, "reversible ) and", smatrix.shape[0],
+          "metabolites.")
 
     outer_counter = 1
     print("========================================================================")
@@ -39,28 +40,26 @@ def main(inputsbml, ignore_compartments, boundflag):
     while 1:
         start_metabolites = metabolites
         start_reactions = reactions
-        print("Deadend compressions", "(", outer_counter, ")")
+
+        print("*** Compression round:", outer_counter, "***")
+        print("Start deadend compression...")
         smatrix, reactions, reversibilities, metabolites = deadend.run(smatrix, reactions, reversibilities, metabolites,
                                                                        core_name, outer_counter)
-        print(model.name, "consists of", smatrix.shape[1], "reactions (", rev_count, "reversible ) and",
-              smatrix.shape[0], "metabolites after compressions.")
+        print("Done deadend compression. Network size:", smatrix.shape[0], "metabolites and", smatrix.shape[1], "reactions (", rev_count, "reversible )")
 
-        print("One2Many compressions", "(", outer_counter, ")")
-        smatrix, reactions, reversibilities, metabolites = one2many.run(smatrix, reactions, reversibilities,
+        print("Start many2one compression...")
+        smatrix, reactions, reversibilities, metabolites = many2one.run(smatrix, reactions, reversibilities,
                                                                         metabolites, core_name, outer_counter)
-        print(model.name, "consists of", smatrix.shape[1], "reactions (", rev_count, "reversible ) and",
-              smatrix.shape[0], "metabolites after compressions.")
+        print("Done many2one compression. Network size:", smatrix.shape[0], "metabolites and", smatrix.shape[1], "reactions (", rev_count, "reversible )")
 
-        print("NullSpace compressions", "(", outer_counter, ")")
+        print("Start nullspace compression...")
         smatrix, reactions, reversibilities, metabolites = nullspace.run(smatrix, reactions, reversibilities,
                                                                          metabolites, core_name, outer_counter)
-        print(model.name, "consists of", smatrix.shape[1], "reactions (", rev_count, "reversible ) and",
-              smatrix.shape[0], "metabolites after compressions.")
+        print("Done nullspace compression. Network size:", smatrix.shape[0], "metabolites and", smatrix.shape[1], "reactions (", rev_count, "reversible )")
 
-        print("Echelon compressions", "(", outer_counter, ")")
+        print("Start echelon compressions...")
         smatrix, metabolites = echelon.run(smatrix, metabolites)
-        print(model.name, "consists of", smatrix.shape[1], "reactions (", rev_count, "reversible ) and",
-              smatrix.shape[0], "metabolites after compressions.")
+        print("Done echelon compression. Network size:", smatrix.shape[0], "metabolites and", smatrix.shape[1], "reactions (", rev_count, "reversible )")
 
         end_metabolites = metabolites
         end_reactions = reactions
@@ -69,11 +68,10 @@ def main(inputsbml, ignore_compartments, boundflag):
             outer_counter += 1
             continue
         else:
-            print("DONE COMPRESSIONS after: ", outer_counter, "rounds")
+            print("*** COMPRESSIONS DONE after:", outer_counter, "rounds ***")
             print("========================================================================")
             rev_count = reversibilities4printing(reversibilities)
-            print(model.name, "consists of", smatrix.shape[1], "reactions (", rev_count, "reversible ) and",
-                  smatrix.shape[0], "metabolites after compressions.")
+            print("Compressed network size:", smatrix.shape[1], "reactions (", rev_count, "reversible ) and", smatrix.shape[0], "metabolites.")
             break
 
     print("Writing files")
@@ -86,7 +84,7 @@ def main(inputsbml, ignore_compartments, boundflag):
 
 def start(inputsbml, ignore_compartments, bounds):
     """
-    Takes all parameters form commandline, checks if parameters are okay and if everything is fine initialises log file
+    Takes all parameters from command line, checks if parameters are okay and if everything is fine initialises log file
     and calls main function if an error occurs an exception is raised and ends the program.
     :param inputsbml: path to sbml input file that contains the metabolic model
     :param ignore_compartments: list of compartments to ignore
@@ -115,7 +113,7 @@ def start_from_command_line():
                                                        'for calculating EFMs with mplrs', epilog=usage,
                             formatter_class=RawDescriptionHelpFormatter)
     parser.add_argument("-i", "--inputsbml", help="path to input sbml file ")
-    parser.add_argument('--ignore_compartments', nargs='?',
+    parser.add_argument('--ignore_compartments', nargs='*',
                         help="name or names of compartments that will be ignored e.g. C_e,C_b")
     parser.add_argument("--bounds", action='store_true',help="if flag --bounds is set, bounds from sbml will be taken into account")
     if len(sys.argv) == 1:

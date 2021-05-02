@@ -15,22 +15,16 @@ def write_all(smatrix, reactions, reversibilities, metabolites, name):
     write_init_mfile(name, metabolites)
 
 
-def write_initial_files_with_bounds(core_name, smatrix, reactions, reversibilities, metabolites):
-    Smatrix = Matrix(smatrix)
-    write_sfile(core_name, Smatrix)
+def write_initial_files_with_bounds(core_name, reactions, reversibilities, metabolites):
     write_init_rfile(core_name, reactions)
     write_rvfile(core_name, reversibilities)
     write_init_mfile(core_name, metabolites)
-    return Smatrix
 
 
-def write_initial_files_no_bounds(core_name, smatrix, reactions, reversibilities, metabolites):
-    Smatrix = Matrix(smatrix)
-    write_sfile(core_name, Smatrix)
+def write_initial_files_no_bounds(core_name, reactions, reversibilities, metabolites):
     write_init_rfile(core_name, reactions)
     write_rvfile(core_name, reversibilities)
     write_init_mfile(core_name, metabolites)
-    return Smatrix
 
 
 def read_sfile_int(name):
@@ -80,9 +74,39 @@ def write_sfile(name, smatrix):
     file.close()
 
 
+def write_sfile_float(name, smatrix):
+    name += ".sfile"
+    file = open(name, "w")
+    for row in smatrix:
+        cnt = 0
+        for val in row:
+            cnt += 1
+            if cnt < len(smatrix[0]):
+                check = (val).is_integer()
+                if check is True:
+                    file.write(str(int(val)))
+                    file.write(" ")
+                if check is False:
+                    file.write(str(float(val)))
+                    file.write(" ")
+            else:
+                check = (val).is_integer()
+                if check is True:
+                    file.write(str(int(val)))
+                if check is False:
+                    file.write(str(float(val)))
+        file.write("\n")
+    file.close()
+
+
 def convert_float2fraction(matrix):
     fr_matrix = [[Fraction(str(val)) for val in line] for line in matrix]
     return fr_matrix
+
+
+def convert_fraction2float(matrix):
+    float_matrix = [[float(val) for val in line] for line in matrix]
+    return float_matrix
 
 
 def convert_matrix2df(smatrix):
@@ -254,8 +278,8 @@ def efmlrs_finish_decompressions():
 
 def write_uncmp_int_matrix(core_name):
     smatrix = read_sfile(core_name)
-    int_smatrix = conversion.run(smatrix)
-    write_sfile(core_name, int_smatrix)
+    smatrix = Matrix(smatrix)
+    write_sfile(core_name, smatrix)
     smatrix = Matrix(smatrix)
     write_sfile(core_name + "_fractions", smatrix)
 
@@ -264,5 +288,3 @@ def write_cmp_int_matrix(core_name):
     smatrix = read_sfile(core_name + "_cmp")
     int_smatrix = conversion.run(smatrix)
     write_sfile(core_name + "_cmp", int_smatrix)
-    smatrix = Matrix(smatrix)
-    write_sfile(core_name + "_cmp_fractions", smatrix)

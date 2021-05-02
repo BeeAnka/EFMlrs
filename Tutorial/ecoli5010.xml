@@ -1,0 +1,2226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" xmlns:groups="http://www.sbml.org/sbml/level3/version1/groups/version1" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false" groups:required="false">
+  <model metaid="meta_Ecoli_core_model" id="Ecoli_core_model" name="Ecoli_core_model" fbc:strict="true">
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="C_c" name="Cytoplasm" constant="true"/>
+      <compartment id="C_e" name="Extracellular" constant="true"/>
+      <compartment id="C_b" name="External" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="M_13dpg_c" name="3-Phospho-D-glyceroyl-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H4O10P2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57604</p>
+            <p>FORMULA: C3H4O10P2</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_2pg_c" name="D-Glycerate-2-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H4O7P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 58289</p>
+            <p>FORMULA: C3H4O7P</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_3pg_c" name="3-Phospho-D-glycerate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H4O7P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 58272</p>
+            <p>FORMULA: C3H4O7P</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_6pgc_c" name="6-Phospho-D-gluconate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H10O10P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 58759</p>
+            <p>FORMULA: C6H10O10P</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_6pgl_c" name="6-phospho-D-glucono-1-5-lactone" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H9O9P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57955</p>
+            <p>FORMULA: C6H9O9P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_ac_c" name="Acetate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H3O2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30089</p>
+            <p>FORMULA: C2H3O2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_ac_e" name="Acetate" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H3O2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30089</p>
+            <p>FORMULA: C2H3O2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_acald_c" name="Acetaldehyde" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H4O">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 15343</p>
+            <p>FORMULA: C2H4O</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_accoa_c" name="Acetyl-CoA" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C23H34N7O17P3S">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57288</p>
+            <p>FORMULA: C23H34N7O17P3S</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_acon_C_c" name="cis-Aconitate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H3O6">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16383</p>
+            <p>FORMULA: C6H3O6</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_actp_c" name="Acetyl-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H3O5P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 22191</p>
+            <p>FORMULA: C2H3O5P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_adp_c" name="ADP" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C10H12N5O10P2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 456216</p>
+            <p>FORMULA: C10H12N5O10P2</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_akg_c" name="2-Oxoglutarate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H4O5">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16810</p>
+            <p>FORMULA: C5H4O5</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_amp_c" name="AMP" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C10H12N5O7P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 456215</p>
+            <p>FORMULA: C10H12N5O7P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_atp_c" name="ATP" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C10H12N5O13P3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30616</p>
+            <p>FORMULA: C10H12N5O13P3</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_atpmain_b" name="ATP" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C10H12N5O13P3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30616</p>
+            <p>FORMULA: C10H12N5O13P3</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_cit_c" name="Citrate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H5O7">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16947</p>
+            <p>FORMULA: C6H5O7</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_co2_c" name="CO2" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16526</p>
+            <p>FORMULA: CO2</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_co2_e" name="CO2" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16526</p>
+            <p>FORMULA: CO2</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_coa_c" name="Coenzyme-A" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C21H32N7O16P3S">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57287</p>
+            <p>FORMULA: C21H32N7O16P3S</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_dd6pg_c" name="2-Dehydro-3-deoxy-6-phospho-D-gluconate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H8O9P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57569</p>
+            <p>FORMULA: C6H8O9P</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_dhap_c" name="Dihydroxyacetone-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O6P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57642</p>
+            <p>FORMULA: C3H5O6P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_e4p_c" name="D-Erythrose-4-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H7O7P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16897</p>
+            <p>FORMULA: C4H7O7P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_etoh_c" name="Ethanol" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H6O">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16236</p>
+            <p>FORMULA: C2H6O</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_etoh_e" name="Ethanol" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H6O">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16236</p>
+            <p>FORMULA: C2H6O</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_f6p_c" name="D-Fructose-6-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H11O9P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57579</p>
+            <p>FORMULA: C6H11O9P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_fdp_c" name="D-Fructose-1-6-bisphosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H10O12P2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>FORMULA: C6H10O12P2</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_for_c" name="Formate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH1O2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 15740</p>
+            <p>FORMULA: CH1O2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_for_e" name="Formate" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH1O2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 15740</p>
+            <p>FORMULA: CH1O2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_fum_c" name="Fumarate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H2O4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 29806</p>
+            <p>FORMULA: C4H2O4</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_g3p_c" name="Glyceraldehyde-3-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O6P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 59776</p>
+            <p>FORMULA: C3H5O6P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_g6p_c" name="D-Glucose-6-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H11O9P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57579</p>
+            <p>FORMULA: C6H11O9P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_glc_D_e" name="D-Glucose" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 4167</p>
+            <p>FORMULA: C6H12O6</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_glx_c" name="Glyoxylate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H1O3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 36655</p>
+            <p>FORMULA: C2H1O3</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_h2_e" name="h2_e" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>FORMULA: H2</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_icit_c" name="Isocitrate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H5O7">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16087</p>
+            <p>FORMULA: C6H5O7</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_lac_D_c" name="D-Lactate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16004</p>
+            <p>FORMULA: C3H5O3</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_lac_D_e" name="D-Lactate" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16004</p>
+            <p>FORMULA: C3H5O3</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_mal_L_c" name="L-Malate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O5">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 15589</p>
+            <p>FORMULA: C4H4O5</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nad_c" name="Nicotinamide-adenine-dinucleotide" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C21H26N7O14P2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57540</p>
+            <p>FORMULA: C21H26N7O14P2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nadh_c" name="Nicotinamide-adenine-dinucleotide-reduced" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C21H27N7O14P2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57945</p>
+            <p>FORMULA: C21H27N7O14P2</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nadp_c" name="Nicotinamide-adenine-dinucleotide-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C21H25N7O17P3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 58349</p>
+            <p>FORMULA: C21H25N7O17P3</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nadph_c" name="Nicotinamide-adenine-dinucleotide-phosphate-reduced" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C21H26N7O17P3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57783</p>
+            <p>FORMULA: C21H26N7O17P3</p>
+            <p>NET_CHARGE: -4</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nh4_c" name="Ammonium" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H4N">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 28938</p>
+            <p>FORMULA: H4N</p>
+            <p>NET_CHARGE: +1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nh4_e" name="Ammonium" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H4N">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 28938</p>
+            <p>FORMULA: H4N</p>
+            <p>NET_CHARGE: +1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_oaa_c" name="Oxaloacetate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H2O5">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16452</p>
+            <p>FORMULA: C4H2O5</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_pep_c" name="Phosphoenolpyruvate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H2O6P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>FORMULA: C3H2O6P</p>
+            <p>NET_CHARGE: -3</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_pyr_c" name="Pyruvate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H3O3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 15361</p>
+            <p>FORMULA: C3H3O3</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_q8_c" name="Ubiquinone-8" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C49H74O4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 61683</p>
+            <p>FORMULA: C49H74O4</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_q8h2_c" name="Ubiquinol-8" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C49H76O4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 61682</p>
+            <p>FORMULA: C49H76O4</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_r5p_c" name="alpha-D-Ribose-5-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H9O8P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>FORMULA: C5H9O8P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_ru5p_D_c" name="D-Ribulose-5-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H9O8P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 58121</p>
+            <p>FORMULA: C5H9O8P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_s7p_c" name="Sedoheptulose-7-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C7H13O10P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57483</p>
+            <p>FORMULA: C7H13O10P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_succ_c" name="Succinate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30031</p>
+            <p>FORMULA: C4H4O4</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_succ_e" name="Succinate" compartment="C_e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30031</p>
+            <p>FORMULA: C4H4O4</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_succoa_c" name="Succinyl-CoA" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C25H35N7O19P3S">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57292</p>
+            <p>FORMULA: C25H35N7O19P3S</p>
+            <p>NET_CHARGE: -5</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_xu5p_D_c" name="D-Xylulose-5-phosphate" compartment="C_c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H9O8P">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 57737</p>
+            <p>FORMULA: C5H9O8P</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_ac_b" name="ac_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H3O2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30089</p>
+            <p>FORMULA: C2H3O2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_co2_b" name="co2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16526</p>
+            <p>FORMULA: CO2</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_etoh_b" name="etoh_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H6O">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16236</p>
+            <p>FORMULA: C2H6O</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_for_b" name="for_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH1O2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 15740</p>
+            <p>FORMULA: CH1O2</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_h2_b" name="h2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>FORMULA: H2</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_glc_D_b" name="glc_D_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 4167</p>
+            <p>FORMULA: C6H12O6</p>
+            <p>NET_CHARGE: 0</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_lac_D_b" name="lac_D_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O3">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 16004</p>
+            <p>FORMULA: C3H5O3</p>
+            <p>NET_CHARGE: -1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_nh4_b" name="nh4_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H4N">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 28938</p>
+            <p>FORMULA: H4N</p>
+            <p>NET_CHARGE: +1</p>
+          </html>
+        </notes>
+      </species>
+      <species id="M_succ_b" name="succ_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O4">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>CHEBI: 30031</p>
+            <p>FORMULA: C4H4O4</p>
+            <p>NET_CHARGE: -2</p>
+          </html>
+        </notes>
+      </species>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="-1000" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_ub" value="1000" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_0_bound" value="0" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="minus_inf" value="-INF" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="plus_inf" value="INF" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_ATPM_lower_bound" value="8.39" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_EX_glc_e_lower_bound" value="-10" units="mmol_per_gDW_per_hr" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="R_PGI" name="glucose-6-phosphate isomerase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b4025</p>
+            <p>GENE_LIST: b4025</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g6p_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b4025"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PFK" name="phosphofructokinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b3916  or  b1723 )</p>
+            <p>GENE_LIST: b1723 b3916</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_fdp_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b3916"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1723"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FBP" name="fructose-bisphosphatase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3925 or b4232)</p>
+            <p>GENE_LIST: b3925 b4232</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b3925"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4232"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FBA" name="fructose-bisphosphate aldolase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2097 or b1773 or b2925)</p>
+            <p>GENE_LIST: b1773 b2097 b2925</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fdp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_dhap_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2097"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1773"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2925"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_TPI" name="triose-phosphate isomerase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b3919</p>
+            <p>GENE_LIST: b3919</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_dhap_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b3919"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_GAPD" name="glyceraldehyde-3-phosphate dehydrogenase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1779</p>
+            <p>GENE_LIST: b1779</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_13dpg_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1779"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PGK" name="phosphoglycerate kinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2926</p>
+            <p>GENE_LIST: b2926</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_13dpg_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_3pg_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b2926"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PGM" name="phosphoglycerate mutase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3612 or b4395 or b0755)</p>
+            <p>GENE_LIST: b0755 b3612 b4395</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_3pg_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_2pg_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b3612"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4395"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0755"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ENO" name="enolase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2779</p>
+            <p>GENE_LIST: b2779</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_2pg_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_pep_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b2779"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PYK" name="pyruvate kinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b1854 or b1676)</p>
+            <p>GENE_LIST: b1676 b1854</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pep_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b1854"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1676"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PPS" name="phosphoenolpyruvate synthase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1702</p>
+            <p>GENE_LIST: b1702</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_amp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pep_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1702"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PDH" name="pyruvate dehydrogenase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b0114  and  b0115  and  b0116 )</p>
+            <p>GENE_LIST: b0114 b0115 b0116</p>
+            <p>SUBSYSTEM: Glycolysis/Gluconeogenesis</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b0114"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0115"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0116"/>
+          </fbc:and>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_G6PDH2r" name="glucose 6-phosphate dehydrogenase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1852</p>
+            <p>GENE_LIST: b1852</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g6p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_6pgl_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1852"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PGL" name="6-phosphogluconolactonase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b0767</p>
+            <p>GENE_LIST: b0767</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_6pgl_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_6pgc_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b0767"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_GND" name="phosphogluconate dehydrogenase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2029</p>
+            <p>GENE_LIST: b2029</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_6pgc_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b2029"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_RPE" name="ribulose 5-phosphate 3-epimerase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3386 or b4301)</p>
+            <p>GENE_LIST: b3386 b4301</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b3386"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4301"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_RPI" name="ribose-5-phosphate isomerase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b2914  or  b4090 )</p>
+            <p>GENE_LIST: b2914 b4090</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ru5p_D_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_r5p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2914"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4090"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_TKT1" name="transketolase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b2935  or  b2465 )</p>
+            <p>GENE_LIST: b2465 b2935</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_r5p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2935"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2465"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_TALA" name="transaldolase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2464 or b0008)</p>
+            <p>GENE_LIST: b0008 b2464</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_s7p_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_e4p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_f6p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2464"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0008"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_TKT2" name="transketolase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b2935  or  b2465 )</p>
+            <p>GENE_LIST: b2465 b2935</p>
+            <p>SUBSYSTEM: Pentose Phosphate Pathway</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_e4p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_xu5p_D_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_f6p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2935"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2465"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_CS" name="citrate synthase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b0720</p>
+            <p>GENE_LIST: b0720</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_oaa_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_cit_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b0720"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ACONTa" name="aconitase (half-reaction A, Citrate hydro-lyase)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0118 or b1276)</p>
+            <p>GENE_LIST: b0118 b1276</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_cit_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_acon_C_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b0118"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1276"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ACONTb" name="aconitase (half-reaction B, Isocitrate hydro-lyase)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0118 or b1276)</p>
+            <p>GENE_LIST: b0118 b1276</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_acon_C_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_icit_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b0118"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1276"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ICDHyr" name="isocitrate dehydrogenase (NADP)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1136</p>
+            <p>GENE_LIST: b1136</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_icit_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_akg_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1136"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_AKGDH" name="2-Oxoglutarate dehydrogenase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b0116  and  b0726  and  b0727 )</p>
+            <p>GENE_LIST: b0116 b0726 b0727</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_akg_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succoa_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b0116"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0726"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0727"/>
+          </fbc:and>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_SUCOAS" name="succinyl-CoA synthetase (ADP-forming)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b0728  and  b0729 )</p>
+            <p>GENE_LIST: b0728 b0729</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succoa_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b0728"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0729"/>
+          </fbc:and>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FRD7" name="fumarate reductase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b4151 and b4152 and b4153 and b4154)</p>
+            <p>GENE_LIST: b4151 b4152 b4153 b4154</p>
+            <p>SUBSYSTEM: Oxidative Phosphorylation</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_q8_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_fum_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_q8h2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b4151"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4152"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4153"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4154"/>
+          </fbc:and>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FUM" name="fumarase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b1612  or  b4122  or  b1611 )</p>
+            <p>GENE_LIST: b1611 b1612 b4122</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fum_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_mal_L_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b1612"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b4122"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1611"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_MDH" name="malate dehydrogenase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b3236</p>
+            <p>GENE_LIST: b3236</p>
+            <p>SUBSYSTEM: Citric Acid Cycle</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_mal_L_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_oaa_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b3236"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_SUCDi" name="succinate dehydrogenase (irreversible)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0721 and b0722 and b0723 and b0724)</p>
+            <p>GENE_LIST: b0721 b0722 b0723 b0724</p>
+            <p>SUBSYSTEM: Oxidative Phosphorylation</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_fum_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_q8h2_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_q8_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b0721"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0722"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0723"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0724"/>
+          </fbc:and>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ICL" name="Isocitrate lyase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b4015</p>
+            <p>GENE_LIST: b4015</p>
+            <p>SUBSYSTEM: Anaplerotic reactions</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_icit_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_glx_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b4015"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_MALS" name="malate synthase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b4014  or  b2976 )</p>
+            <p>GENE_LIST: b2976 b4014</p>
+            <p>SUBSYSTEM: Anaplerotic reactions</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_glx_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_mal_L_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b4014"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2976"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PPC" name="phosphoenolpyruvate carboxylase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b3956</p>
+            <p>GENE_LIST: b3956</p>
+            <p>SUBSYSTEM: Anaplerotic reactions</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pep_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_oaa_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b3956"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ME1" name="malic enzyme (NAD)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1479</p>
+            <p>GENE_LIST: b1479</p>
+            <p>SUBSYSTEM: Anaplerotic reactions</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_mal_L_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1479"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PPCK" name="phosphoenolpyruvate carboxykinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b3403</p>
+            <p>GENE_LIST: b3403</p>
+            <p>SUBSYSTEM: Anaplerotic reactions</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_oaa_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pep_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b3403"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_PFL" name="pyruvate formate lyase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (((b0902 and b0903) and b2579) or (b0902 and b0903) or (b0902 and b3114) or (b3951 and b3952))</p>
+            <p>GENE_LIST: b0902 b0903 b2579 b3114 b3951 b3952</p>
+            <p>SUBSYSTEM: Pyruvate Metabolism</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_for_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b0902"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b0903"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2579"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b0902"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b0903"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b0902"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b3114"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b3951"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b3952"/>
+            </fbc:and>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FEM2" name="pyruvate dehydrogenase (quinone)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b0871</p>
+            <p>GENE_LIST: b0871</p>
+            <p>SUBSYSTEM: Pyruvate metabolism</p>
+            <p>KEGG: R03145</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_q8_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ac_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_q8h2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b0871"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_LDH_D" name="D lactate dehydrogenase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2133 or b1380)</p>
+            <p>GENE_LIST: b1380 b2133</p>
+            <p>SUBSYSTEM: Pyruvate Metabolism</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_lac_D_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2133"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1380"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FEM4" name="formate dehydrogenase complex" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_for_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_h2_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ACALD" name="acetaldehyde dehydrogenase (acetylating)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0351 or b1241)</p>
+            <p>GENE_LIST: b0351 b1241</p>
+            <p>SUBSYSTEM: Pyruvate Metabolism</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_acald_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b0351"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1241"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ALCD2x" name="alcohol dehydrogenase (ethanol)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0356 or b1478 or b1241)</p>
+            <p>GENE_LIST: b0356 b1241 b1478</p>
+            <p>SUBSYSTEM: Pyruvate Metabolism</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_acald_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_etoh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b0356"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1478"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1241"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FEM7" name="acetyl-CoA:phosphate acetyltransferase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b2297</p>
+            <p>GENE_LIST: b2297</p>
+            <p>SUBSYSTEM: Pyruvate metabolism</p>
+            <p>KEGG: R00230</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_actp_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b2297"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ACKr" name="acetate kinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3115 or b2296 or b1849)</p>
+            <p>GENE_LIST: b1849 b2296 b3115</p>
+            <p>SUBSYSTEM: Pyruvate Metabolism</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_actp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ac_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b3115"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2296"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b1849"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_FEM9" name="pyruvate decarboxylase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_acald_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EDP1" name="6-Phospho-D-gluconate hydro-lyase(2-dehydro-3-deoxy-6-phospho-D-gluconate-forming)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1851</p>
+            <p>GENE_LIST: b1851</p>
+            <p>SUBSYSTEM: Pentose phosphate pathway</p>
+            <p>KEGG: R02036</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_6pgc_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_dd6pg_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1851"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_EDP2" name="2-dehydro-3-deoxy-D-gluconate-6-phosphate D-glyceraldehyde-3-phosphate-lyase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b1850</p>
+            <p>GENE_LIST: b1850</p>
+            <p>SUBSYSTEM: Pentose phosphate pathway</p>
+            <p>KEGG: R05605</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_dd6pg_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b1850"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_GLCpts" name="D-glucose transport via PEP:Pyr PTS" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ((b2417 and b1101 and b2415 and b2416) or (b1817 and b1818 and b1819 and b2415 and b2416) or (b2417 and b1621 and b2415 and b2416))</p>
+            <p>GENE_LIST: b1101 b1621 b1817 b1818 b1819 b2415 b2416 b2417</p>
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_glc_D_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pep_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_g6p_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2417"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1101"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2415"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2416"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1817"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1818"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1819"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2415"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2416"/>
+            </fbc:and>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b2417"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1621"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2415"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b2416"/>
+            </fbc:and>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_Biomass_Ecoli_core_w_GAM" name="Biomass Objective Function with GAM" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_3pg_c" stoichiometry="1.642" constant="true"/>
+          <speciesReference species="M_accoa_c" stoichiometry="1.207" constant="true"/>
+          <speciesReference species="M_atp_c" stoichiometry="40.68" constant="true"/>
+          <speciesReference species="M_e4p_c" stoichiometry="0.512" constant="true"/>
+          <speciesReference species="M_f6p_c" stoichiometry="0.017" constant="true"/>
+          <speciesReference species="M_g3p_c" stoichiometry="0.031" constant="true"/>
+          <speciesReference species="M_g6p_c" stoichiometry="0.049" constant="true"/>
+          <speciesReference species="M_nad_c" stoichiometry="4.079" constant="true"/>
+          <speciesReference species="M_nadph_c" stoichiometry="18.32" constant="true"/>
+          <speciesReference species="M_oaa_c" stoichiometry="2.355" constant="true"/>
+          <speciesReference species="M_pep_c" stoichiometry="0.96" constant="true"/>
+          <speciesReference species="M_pyr_c" stoichiometry="3.92" constant="true"/>
+          <speciesReference species="M_r5p_c" stoichiometry="0.86" constant="true"/>
+          <speciesReference species="M_akg_c" stoichiometry="1.426" constant="true"/>
+          <speciesReference species="M_nh4_c" stoichiometry="12.502" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="40.68" constant="true"/>
+          <speciesReference species="M_coa_c" stoichiometry="1.207" constant="true"/>
+          <speciesReference species="M_nadh_c" stoichiometry="4.079" constant="true"/>
+          <speciesReference species="M_nadp_c" stoichiometry="18.32" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ATPM" name="ATP maintenance requirement" reversible="false" fast="false" fbc:lowerFluxBound="R_ATPM_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Oxidative Phosphorylation</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_atpmain_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_NADH16" name="NADH dehydrogenase (ubiquinone-8 &amp; 3 protons)" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b2276 and b2277 and b2278 and b2279 and b2280 and b2281 and b2282 and b2283 and b2284 and b2285 and b2286 and b2287 and b2288)</p>
+            <p>GENE_LIST: b2276 b2277 b2278 b2279 b2280 b2281 b2282 b2283 b2284 b2285 b2286 b2287 b2288</p>
+            <p>SUBSYSTEM: Oxidative Phosphorylation</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_q8_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_q8h2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:and>
+            <fbc:geneProductRef fbc:geneProduct="G_b2276"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2277"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2278"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2279"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2280"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2281"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2282"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2283"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2284"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2285"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2286"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2287"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2288"/>
+          </fbc:and>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_NADTRHD" name="NAD transhydrogenase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b3962 or (b1602 and b1603))</p>
+            <p>GENE_LIST: b1602 b1603 b3962</p>
+            <p>SUBSYSTEM: Oxidative Phosphorylation</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nad_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadph_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nadh_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b3962"/>
+            <fbc:and>
+              <fbc:geneProductRef fbc:geneProduct="G_b1602"/>
+              <fbc:geneProductRef fbc:geneProduct="G_b1603"/>
+            </fbc:and>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ADK1" name="adenylate kinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: b0474</p>
+            <p>GENE_LIST: b0474</p>
+            <p>SUBSYSTEM: Oxidative Phosphorylation</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_amp_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_adp_c" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_b0474"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_ETOHt2r" name="ethanol reversible transport via proton symport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_etoh_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_etoh_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ACt2r" name="acetate reversible transport via proton symport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ac_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ac_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_NH4t" name="ammonia reversible transport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (s0001 or b0451)</p>
+            <p>GENE_LIST: b0451 s0001</p>
+            <p>SUBSYSTEM: Inorganic Ion Transport and Metabolism</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nh4_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nh4_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_s0001"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b0451"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_D_LACt2" name="D-lactate transport via proton symport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: ( b2975  or  b3603 )</p>
+            <p>GENE_LIST: b2975 b3603</p>
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_lac_D_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_lac_D_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b2975"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b3603"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_SUCCt3" name="succinate transport out via proton antiport" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_succ_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_FORti" name="formate transport via diffusion" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: (b0904 or b2492)</p>
+            <p>GENE_LIST: b0904 b2492</p>
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_for_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_for_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:or>
+            <fbc:geneProductRef fbc:geneProduct="G_b0904"/>
+            <fbc:geneProductRef fbc:geneProduct="G_b2492"/>
+          </fbc:or>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_CO2t" name="CO2 transporter via diffusion" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>GENE_ASSOCIATION: s0001</p>
+            <p>GENE_LIST: s0001</p>
+            <p>SUBSYSTEM: Transport, Extracellular</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_co2_c" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+        <fbc:geneProductAssociation>
+          <fbc:geneProductRef fbc:geneProduct="G_s0001"/>
+        </fbc:geneProductAssociation>
+      </reaction>
+      <reaction id="R_EX_ac_e" name="Acetate exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_ac_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_ac_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_co2_e" name="CO2 exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_co2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_co2_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_etoh_e" name="Ethanol exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_etoh_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_etoh_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_for_e" name="Formate exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_for_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_for_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_glc_e" name="D-Glucose exchange" reversible="false" fast="false" fbc:lowerFluxBound="R_EX_glc_e_lower_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_glc_D_b" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_glc_D_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_lac_D_e" name="D-Lactate exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_lac_D_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_lac_D_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_nh4_e" name="Ammonium exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_nh4_b" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_nh4_e" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_succ_e" name="Succinate exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_succ_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_succ_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_EX_h2_e" name="h2 exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <notes>
+          <html xmlns="http://www.w3.org/1999/xhtml">
+            <p>SUBSYSTEM: Exchange</p>
+          </html>
+        </notes>
+        <listOfReactants>
+          <speciesReference species="M_h2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_h2_b" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+    <fbc:listOfObjectives fbc:activeObjective="obj">
+      <fbc:objective fbc:id="obj" fbc:type="maximize">
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective fbc:reaction="R_Biomass_Ecoli_core_w_GAM" fbc:coefficient="1"/>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+    </fbc:listOfObjectives>
+    <fbc:listOfGeneProducts>
+      <fbc:geneProduct fbc:id="G_b4025" fbc:name="b4025" fbc:label="G_b4025"/>
+      <fbc:geneProduct fbc:id="G_b1723" fbc:name="b1723" fbc:label="G_b1723"/>
+      <fbc:geneProduct fbc:id="G_b3916" fbc:name="b3916" fbc:label="G_b3916"/>
+      <fbc:geneProduct fbc:id="G_b4232" fbc:name="b4232" fbc:label="G_b4232"/>
+      <fbc:geneProduct fbc:id="G_b3925" fbc:name="b3925" fbc:label="G_b3925"/>
+      <fbc:geneProduct fbc:id="G_b2097" fbc:name="b2097" fbc:label="G_b2097"/>
+      <fbc:geneProduct fbc:id="G_b2925" fbc:name="b2925" fbc:label="G_b2925"/>
+      <fbc:geneProduct fbc:id="G_b1773" fbc:name="b1773" fbc:label="G_b1773"/>
+      <fbc:geneProduct fbc:id="G_b3919" fbc:name="b3919" fbc:label="G_b3919"/>
+      <fbc:geneProduct fbc:id="G_b1779" fbc:name="b1779" fbc:label="G_b1779"/>
+      <fbc:geneProduct fbc:id="G_b2926" fbc:name="b2926" fbc:label="G_b2926"/>
+      <fbc:geneProduct fbc:id="G_b0755" fbc:name="b0755" fbc:label="G_b0755"/>
+      <fbc:geneProduct fbc:id="G_b4395" fbc:name="b4395" fbc:label="G_b4395"/>
+      <fbc:geneProduct fbc:id="G_b3612" fbc:name="b3612" fbc:label="G_b3612"/>
+      <fbc:geneProduct fbc:id="G_b2779" fbc:name="b2779" fbc:label="G_b2779"/>
+      <fbc:geneProduct fbc:id="G_b1676" fbc:name="b1676" fbc:label="G_b1676"/>
+      <fbc:geneProduct fbc:id="G_b1854" fbc:name="b1854" fbc:label="G_b1854"/>
+      <fbc:geneProduct fbc:id="G_b1702" fbc:name="b1702" fbc:label="G_b1702"/>
+      <fbc:geneProduct fbc:id="G_b0114" fbc:name="b0114" fbc:label="G_b0114"/>
+      <fbc:geneProduct fbc:id="G_b0116" fbc:name="b0116" fbc:label="G_b0116"/>
+      <fbc:geneProduct fbc:id="G_b0115" fbc:name="b0115" fbc:label="G_b0115"/>
+      <fbc:geneProduct fbc:id="G_b1852" fbc:name="b1852" fbc:label="G_b1852"/>
+      <fbc:geneProduct fbc:id="G_b0767" fbc:name="b0767" fbc:label="G_b0767"/>
+      <fbc:geneProduct fbc:id="G_b2029" fbc:name="b2029" fbc:label="G_b2029"/>
+      <fbc:geneProduct fbc:id="G_b4301" fbc:name="b4301" fbc:label="G_b4301"/>
+      <fbc:geneProduct fbc:id="G_b3386" fbc:name="b3386" fbc:label="G_b3386"/>
+      <fbc:geneProduct fbc:id="G_b4090" fbc:name="b4090" fbc:label="G_b4090"/>
+      <fbc:geneProduct fbc:id="G_b2914" fbc:name="b2914" fbc:label="G_b2914"/>
+      <fbc:geneProduct fbc:id="G_b2935" fbc:name="b2935" fbc:label="G_b2935"/>
+      <fbc:geneProduct fbc:id="G_b2465" fbc:name="b2465" fbc:label="G_b2465"/>
+      <fbc:geneProduct fbc:id="G_b2464" fbc:name="b2464" fbc:label="G_b2464"/>
+      <fbc:geneProduct fbc:id="G_b0008" fbc:name="b0008" fbc:label="G_b0008"/>
+      <fbc:geneProduct fbc:id="G_b0720" fbc:name="b0720" fbc:label="G_b0720"/>
+      <fbc:geneProduct fbc:id="G_b1276" fbc:name="b1276" fbc:label="G_b1276"/>
+      <fbc:geneProduct fbc:id="G_b0118" fbc:name="b0118" fbc:label="G_b0118"/>
+      <fbc:geneProduct fbc:id="G_b1136" fbc:name="b1136" fbc:label="G_b1136"/>
+      <fbc:geneProduct fbc:id="G_b0727" fbc:name="b0727" fbc:label="G_b0727"/>
+      <fbc:geneProduct fbc:id="G_b0726" fbc:name="b0726" fbc:label="G_b0726"/>
+      <fbc:geneProduct fbc:id="G_b0728" fbc:name="b0728" fbc:label="G_b0728"/>
+      <fbc:geneProduct fbc:id="G_b0729" fbc:name="b0729" fbc:label="G_b0729"/>
+      <fbc:geneProduct fbc:id="G_b4153" fbc:name="b4153" fbc:label="G_b4153"/>
+      <fbc:geneProduct fbc:id="G_b4152" fbc:name="b4152" fbc:label="G_b4152"/>
+      <fbc:geneProduct fbc:id="G_b4154" fbc:name="b4154" fbc:label="G_b4154"/>
+      <fbc:geneProduct fbc:id="G_b4151" fbc:name="b4151" fbc:label="G_b4151"/>
+      <fbc:geneProduct fbc:id="G_b1611" fbc:name="b1611" fbc:label="G_b1611"/>
+      <fbc:geneProduct fbc:id="G_b1612" fbc:name="b1612" fbc:label="G_b1612"/>
+      <fbc:geneProduct fbc:id="G_b4122" fbc:name="b4122" fbc:label="G_b4122"/>
+      <fbc:geneProduct fbc:id="G_b3236" fbc:name="b3236" fbc:label="G_b3236"/>
+      <fbc:geneProduct fbc:id="G_b0724" fbc:name="b0724" fbc:label="G_b0724"/>
+      <fbc:geneProduct fbc:id="G_b0721" fbc:name="b0721" fbc:label="G_b0721"/>
+      <fbc:geneProduct fbc:id="G_b0723" fbc:name="b0723" fbc:label="G_b0723"/>
+      <fbc:geneProduct fbc:id="G_b0722" fbc:name="b0722" fbc:label="G_b0722"/>
+      <fbc:geneProduct fbc:id="G_b4015" fbc:name="b4015" fbc:label="G_b4015"/>
+      <fbc:geneProduct fbc:id="G_b2976" fbc:name="b2976" fbc:label="G_b2976"/>
+      <fbc:geneProduct fbc:id="G_b4014" fbc:name="b4014" fbc:label="G_b4014"/>
+      <fbc:geneProduct fbc:id="G_b3956" fbc:name="b3956" fbc:label="G_b3956"/>
+      <fbc:geneProduct fbc:id="G_b1479" fbc:name="b1479" fbc:label="G_b1479"/>
+      <fbc:geneProduct fbc:id="G_b3403" fbc:name="b3403" fbc:label="G_b3403"/>
+      <fbc:geneProduct fbc:id="G_b3951" fbc:name="b3951" fbc:label="G_b3951"/>
+      <fbc:geneProduct fbc:id="G_b3952" fbc:name="b3952" fbc:label="G_b3952"/>
+      <fbc:geneProduct fbc:id="G_b3114" fbc:name="b3114" fbc:label="G_b3114"/>
+      <fbc:geneProduct fbc:id="G_b0902" fbc:name="b0902" fbc:label="G_b0902"/>
+      <fbc:geneProduct fbc:id="G_b0903" fbc:name="b0903" fbc:label="G_b0903"/>
+      <fbc:geneProduct fbc:id="G_b2579" fbc:name="b2579" fbc:label="G_b2579"/>
+      <fbc:geneProduct fbc:id="G_b0871" fbc:name="b0871" fbc:label="G_b0871"/>
+      <fbc:geneProduct fbc:id="G_b1380" fbc:name="b1380" fbc:label="G_b1380"/>
+      <fbc:geneProduct fbc:id="G_b2133" fbc:name="b2133" fbc:label="G_b2133"/>
+      <fbc:geneProduct fbc:id="G_b1241" fbc:name="b1241" fbc:label="G_b1241"/>
+      <fbc:geneProduct fbc:id="G_b0351" fbc:name="b0351" fbc:label="G_b0351"/>
+      <fbc:geneProduct fbc:id="G_b0356" fbc:name="b0356" fbc:label="G_b0356"/>
+      <fbc:geneProduct fbc:id="G_b1478" fbc:name="b1478" fbc:label="G_b1478"/>
+      <fbc:geneProduct fbc:id="G_b2297" fbc:name="b2297" fbc:label="G_b2297"/>
+      <fbc:geneProduct fbc:id="G_b3115" fbc:name="b3115" fbc:label="G_b3115"/>
+      <fbc:geneProduct fbc:id="G_b2296" fbc:name="b2296" fbc:label="G_b2296"/>
+      <fbc:geneProduct fbc:id="G_b1849" fbc:name="b1849" fbc:label="G_b1849"/>
+      <fbc:geneProduct fbc:id="G_b1851" fbc:name="b1851" fbc:label="G_b1851"/>
+      <fbc:geneProduct fbc:id="G_b1850" fbc:name="b1850" fbc:label="G_b1850"/>
+      <fbc:geneProduct fbc:id="G_b2415" fbc:name="b2415" fbc:label="G_b2415"/>
+      <fbc:geneProduct fbc:id="G_b1818" fbc:name="b1818" fbc:label="G_b1818"/>
+      <fbc:geneProduct fbc:id="G_b2416" fbc:name="b2416" fbc:label="G_b2416"/>
+      <fbc:geneProduct fbc:id="G_b1817" fbc:name="b1817" fbc:label="G_b1817"/>
+      <fbc:geneProduct fbc:id="G_b1621" fbc:name="b1621" fbc:label="G_b1621"/>
+      <fbc:geneProduct fbc:id="G_b1819" fbc:name="b1819" fbc:label="G_b1819"/>
+      <fbc:geneProduct fbc:id="G_b2417" fbc:name="b2417" fbc:label="G_b2417"/>
+      <fbc:geneProduct fbc:id="G_b1101" fbc:name="b1101" fbc:label="G_b1101"/>
+      <fbc:geneProduct fbc:id="G_b2280" fbc:name="b2280" fbc:label="G_b2280"/>
+      <fbc:geneProduct fbc:id="G_b2282" fbc:name="b2282" fbc:label="G_b2282"/>
+      <fbc:geneProduct fbc:id="G_b2277" fbc:name="b2277" fbc:label="G_b2277"/>
+      <fbc:geneProduct fbc:id="G_b2283" fbc:name="b2283" fbc:label="G_b2283"/>
+      <fbc:geneProduct fbc:id="G_b2288" fbc:name="b2288" fbc:label="G_b2288"/>
+      <fbc:geneProduct fbc:id="G_b2281" fbc:name="b2281" fbc:label="G_b2281"/>
+      <fbc:geneProduct fbc:id="G_b2286" fbc:name="b2286" fbc:label="G_b2286"/>
+      <fbc:geneProduct fbc:id="G_b2278" fbc:name="b2278" fbc:label="G_b2278"/>
+      <fbc:geneProduct fbc:id="G_b2279" fbc:name="b2279" fbc:label="G_b2279"/>
+      <fbc:geneProduct fbc:id="G_b2285" fbc:name="b2285" fbc:label="G_b2285"/>
+      <fbc:geneProduct fbc:id="G_b2276" fbc:name="b2276" fbc:label="G_b2276"/>
+      <fbc:geneProduct fbc:id="G_b2287" fbc:name="b2287" fbc:label="G_b2287"/>
+      <fbc:geneProduct fbc:id="G_b2284" fbc:name="b2284" fbc:label="G_b2284"/>
+      <fbc:geneProduct fbc:id="G_b1603" fbc:name="b1603" fbc:label="G_b1603"/>
+      <fbc:geneProduct fbc:id="G_b3962" fbc:name="b3962" fbc:label="G_b3962"/>
+      <fbc:geneProduct fbc:id="G_b1602" fbc:name="b1602" fbc:label="G_b1602"/>
+      <fbc:geneProduct fbc:id="G_b0474" fbc:name="b0474" fbc:label="G_b0474"/>
+      <fbc:geneProduct fbc:id="G_b0451" fbc:name="b0451" fbc:label="G_b0451"/>
+      <fbc:geneProduct fbc:id="G_s0001" fbc:name="s0001" fbc:label="G_s0001"/>
+      <fbc:geneProduct fbc:id="G_b2975" fbc:name="b2975" fbc:label="G_b2975"/>
+      <fbc:geneProduct fbc:id="G_b3603" fbc:name="b3603" fbc:label="G_b3603"/>
+      <fbc:geneProduct fbc:id="G_b0904" fbc:name="b0904" fbc:label="G_b0904"/>
+      <fbc:geneProduct fbc:id="G_b2492" fbc:name="b2492" fbc:label="G_b2492"/>
+    </fbc:listOfGeneProducts>
+    <groups:listOfGroups>
+      <groups:group groups:id="G_Glycolysis__47__Gluconeogenesis" groups:name="Glycolysis/Gluconeogenesis" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="phosphofructokinase" groups:idRef="R_PFK"/>
+          <groups:member groups:name="fructose-bisphosphatase" groups:idRef="R_FBP"/>
+          <groups:member groups:name="phosphoglycerate kinase" groups:idRef="R_PGK"/>
+          <groups:member groups:name="pyruvate kinase" groups:idRef="R_PYK"/>
+          <groups:member groups:name="triose-phosphate isomerase" groups:idRef="R_TPI"/>
+          <groups:member groups:name="phosphoglycerate mutase" groups:idRef="R_PGM"/>
+          <groups:member groups:name="enolase" groups:idRef="R_ENO"/>
+          <groups:member groups:name="glyceraldehyde-3-phosphate dehydrogenase" groups:idRef="R_GAPD"/>
+          <groups:member groups:name="fructose-bisphosphate aldolase" groups:idRef="R_FBA"/>
+          <groups:member groups:name="phosphoenolpyruvate synthase" groups:idRef="R_PPS"/>
+          <groups:member groups:name="pyruvate dehydrogenase" groups:idRef="R_PDH"/>
+          <groups:member groups:name="glucose-6-phosphate isomerase" groups:idRef="R_PGI"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Pentose__32__Phosphate__32__Pathway" groups:name="Pentose Phosphate Pathway" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="ribulose 5-phosphate 3-epimerase" groups:idRef="R_RPE"/>
+          <groups:member groups:name="transaldolase" groups:idRef="R_TALA"/>
+          <groups:member groups:name="transketolase" groups:idRef="R_TKT2"/>
+          <groups:member groups:name="6-phosphogluconolactonase" groups:idRef="R_PGL"/>
+          <groups:member groups:name="ribose-5-phosphate isomerase" groups:idRef="R_RPI"/>
+          <groups:member groups:name="transketolase" groups:idRef="R_TKT1"/>
+          <groups:member groups:name="glucose 6-phosphate dehydrogenase" groups:idRef="R_G6PDH2r"/>
+          <groups:member groups:name="phosphogluconate dehydrogenase" groups:idRef="R_GND"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Citric__32__Acid__32__Cycle" groups:name="Citric Acid Cycle" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="2-Oxoglutarate dehydrogenase" groups:idRef="R_AKGDH"/>
+          <groups:member groups:name="malate dehydrogenase" groups:idRef="R_MDH"/>
+          <groups:member groups:name="aconitase (half-reaction B, Isocitrate hydro-lyase)" groups:idRef="R_ACONTb"/>
+          <groups:member groups:name="fumarase" groups:idRef="R_FUM"/>
+          <groups:member groups:name="citrate synthase" groups:idRef="R_CS"/>
+          <groups:member groups:name="isocitrate dehydrogenase (NADP)" groups:idRef="R_ICDHyr"/>
+          <groups:member groups:name="aconitase (half-reaction A, Citrate hydro-lyase)" groups:idRef="R_ACONTa"/>
+          <groups:member groups:name="succinyl-CoA synthetase (ADP-forming)" groups:idRef="R_SUCOAS"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Oxidative__32__Phosphorylation" groups:name="Oxidative Phosphorylation" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="succinate dehydrogenase (irreversible)" groups:idRef="R_SUCDi"/>
+          <groups:member groups:name="NAD transhydrogenase" groups:idRef="R_NADTRHD"/>
+          <groups:member groups:name="fumarate reductase" groups:idRef="R_FRD7"/>
+          <groups:member groups:name="NADH dehydrogenase (ubiquinone-8 &amp; 3 protons)" groups:idRef="R_NADH16"/>
+          <groups:member groups:name="adenylate kinase" groups:idRef="R_ADK1"/>
+          <groups:member groups:name="ATP maintenance requirement" groups:idRef="R_ATPM"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Anaplerotic__32__reactions" groups:name="Anaplerotic reactions" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="malic enzyme (NAD)" groups:idRef="R_ME1"/>
+          <groups:member groups:name="phosphoenolpyruvate carboxykinase" groups:idRef="R_PPCK"/>
+          <groups:member groups:name="Isocitrate lyase" groups:idRef="R_ICL"/>
+          <groups:member groups:name="phosphoenolpyruvate carboxylase" groups:idRef="R_PPC"/>
+          <groups:member groups:name="malate synthase" groups:idRef="R_MALS"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Pyruvate__32__Metabolism" groups:name="Pyruvate Metabolism" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="pyruvate formate lyase" groups:idRef="R_PFL"/>
+          <groups:member groups:name="acetaldehyde dehydrogenase (acetylating)" groups:idRef="R_ACALD"/>
+          <groups:member groups:name="D lactate dehydrogenase" groups:idRef="R_LDH_D"/>
+          <groups:member groups:name="alcohol dehydrogenase (ethanol)" groups:idRef="R_ALCD2x"/>
+          <groups:member groups:name="acetate kinase" groups:idRef="R_ACKr"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Pyruvate__32__metabolism" groups:name="Pyruvate metabolism" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="acetyl-CoA:phosphate acetyltransferase" groups:idRef="R_FEM7"/>
+          <groups:member groups:name="pyruvate dehydrogenase (quinone)" groups:idRef="R_FEM2"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Pentose__32__phosphate__32__pathway" groups:name="Pentose phosphate pathway" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="2-dehydro-3-deoxy-D-gluconate-6-phosphate D-glyceraldehyde-3-phosphate-lyase" groups:idRef="R_EDP2"/>
+          <groups:member groups:name="6-Phospho-D-gluconate hydro-lyase(2-dehydro-3-deoxy-6-phospho-D-gluconate-forming)" groups:idRef="R_EDP1"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Transport__44____32__Extracellular" groups:name="Transport, Extracellular" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="D-lactate transport via proton symport" groups:idRef="R_D_LACt2"/>
+          <groups:member groups:name="formate transport via diffusion" groups:idRef="R_FORti"/>
+          <groups:member groups:name="CO2 transporter via diffusion" groups:idRef="R_CO2t"/>
+          <groups:member groups:name="acetate reversible transport via proton symport" groups:idRef="R_ACt2r"/>
+          <groups:member groups:name="D-glucose transport via PEP:Pyr PTS" groups:idRef="R_GLCpts"/>
+          <groups:member groups:name="ethanol reversible transport via proton symport" groups:idRef="R_ETOHt2r"/>
+          <groups:member groups:name="succinate transport out via proton antiport" groups:idRef="R_SUCCt3"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Inorganic__32__Ion__32__Transport__32__and__32__Metabolism" groups:name="Inorganic Ion Transport and Metabolism" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="ammonia reversible transport" groups:idRef="R_NH4t"/>
+        </groups:listOfMembers>
+      </groups:group>
+      <groups:group groups:id="G_Exchange" groups:name="Exchange" groups:kind="collection">
+        <groups:listOfMembers>
+          <groups:member groups:name="Ethanol exchange" groups:idRef="R_EX_etoh_e"/>
+          <groups:member groups:name="Succinate exchange" groups:idRef="R_EX_succ_e"/>
+          <groups:member groups:name="D-Glucose exchange" groups:idRef="R_EX_glc_e"/>
+          <groups:member groups:name="Acetate exchange" groups:idRef="R_EX_ac_e"/>
+          <groups:member groups:name="D-Lactate exchange" groups:idRef="R_EX_lac_D_e"/>
+          <groups:member groups:name="h2 exchange" groups:idRef="R_EX_h2_e"/>
+          <groups:member groups:name="CO2 exchange" groups:idRef="R_EX_co2_e"/>
+          <groups:member groups:name="Ammonium exchange" groups:idRef="R_EX_nh4_e"/>
+          <groups:member groups:name="Formate exchange" groups:idRef="R_EX_for_e"/>
+        </groups:listOfMembers>
+      </groups:group>
+    </groups:listOfGroups>
+  </model>
+</sbml>

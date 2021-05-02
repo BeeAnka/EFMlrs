@@ -218,11 +218,23 @@ def run(inputfile, ignore_compartments, boundflag):
         smatrix, reactions, reversibilities, metabolites, bound_counter = check_bounds(model, smatrix, reactions,
                                                                                        reversibilities, metabolites)
         write_bound_info(core_name, bound_counter)
-        smatrix = write_initial_files_with_bounds(core_name, smatrix, reactions, reversibilities, metabolites)
+
+        smatrix_list = list(smatrix)
+        write_sfile_float(core_name, smatrix_list)
+        write_initial_files_with_bounds(core_name, reactions, reversibilities, metabolites)
+
+        smatrix_fraction = convert_float2fraction(smatrix)
+        smatrix = Matrix(smatrix_fraction)
+
     else:
         bound_counter = 0
         write_bound_info(core_name, bound_counter)
-        smatrix_fract = convert_float2fraction(smatrix)
-        smatrix = write_initial_files_no_bounds(core_name, smatrix_fract, reactions, reversibilities, metabolites)
+
+        smatrix_list = list(smatrix)
+        write_sfile_float(core_name, smatrix_list)
+        write_initial_files_no_bounds(core_name, reactions, reversibilities, metabolites)
+
+        smatrix_fraction = convert_float2fraction(smatrix)
+        smatrix = Matrix(smatrix_fraction)
 
     return smatrix, reactions, reversibilities, metabolites, model, core_name

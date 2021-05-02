@@ -1,0 +1,14 @@
+The original model was obtained was obtain from: M. Breuer doi:10.7554/eLife.36842
+
+JCVI-syn3A is a synthetic, minimal cell with a 543 kbp genome and 493 genes. Its metabolic reconstruction contains 304 metabolites, 338 reactions in total including 244 non-pseudo reactions and 155 genes. Prior to enumerating EFMs, we made the model consistent. That is, we removed all dead-end metabolites and reactions that were unable to carry non-zero steady-state fluxes under any circumstances. Additionally, we redefined reversible reactions to be irreversible, if their fluxes never changed directions.
+
+Although JCVI-syn3A is a reconstruction of a minimal cell it was not possible to enumerate all EFMs in the flux cone of this model via efmtool on our computing infrastructure. To investigate the explosion of the number of EFMs in JCVI-syn3A in more detail, we reduced JCVI-syn3A as much as possible. For this purpose, we computed a minimal medium using the COBRApy function minimal medium() that supports a maximum growth rate of 0.342. In total 22 uptake reactions were not required in this minimal medium and thus removed from the model. This model is referred to as sm00_JCVI-syn3A.xml.
+
+sm00_JCVI-syn3A.xml: includes 0 of 22 non-essential uptake reactions
+sm04_JCVI-syn3A.xml: includes 4 of 22 non-essential uptake reactions
+sm07_JCVI-syn3A.xml: includes 7 of 22 non-essential uptake reactions
+sm08_JCVI-syn3A.xml: includes 8 of 22 non-essential uptake reactions
+sm15_JCVI-syn3A.xml: includes 15 of 22 non-essential uptake reactions
+sm22_JCVI-syn3A.xml: includes all non-essential uptake reactions
+
+Further information on calculations and results can be found: (comming as soon as published)

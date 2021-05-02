@@ -2,6 +2,7 @@ from functools import reduce
 from math import gcd
 from sympy import *
 
+
 def get_denominators(smatrix):
     """
     Gets greatest denominator of each row in stoichiometric matrix
@@ -31,6 +32,7 @@ def get_int_smatrix(smatrix, greatest_denominators):
         i += 1
     return int_smatrix
 
+
 def get_min_smatrix(int_smatrix):
     """
     Gets greatest divisor for each row and divides each row through greatest divisor. Converts matrix from list of
@@ -48,6 +50,7 @@ def get_min_smatrix(int_smatrix):
             min_smatrix.append(row)
     min_sympy_smatrix = Matrix(min_smatrix)
     return min_sympy_smatrix
+
 
 def run(smatrix):
     """

@@ -79,7 +79,7 @@ def write_lrs(core_name, reconf_smatrix):
     :param reconf_smatrix: list of lists of reconfigured stoichiometric matrix
     :return: None
     """
-    core_name += ".ine"
+    core_name += "_cmp.ine"
     mplrs_file = open(core_name, "w")
     write_header(mplrs_file, core_name)
     write_smatrix(mplrs_file, reconf_smatrix)
