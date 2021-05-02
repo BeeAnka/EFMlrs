@@ -9,7 +9,7 @@ import efmlrs.preprocessing.compressions.many2one as many2one
 import efmlrs.preprocessing.compressions.nullspace as nullspace
 import efmlrs.preprocessing.compressions.echelon as echelon
 import efmlrs.preprocessing.mplrs_output as mplrs_output
-import efmlrs.preprocessing.mplrs_output as mplrs_output_uncmps
+import efmlrs.preprocessing.mplrs_output_uncmps as mplrs_output_uncmps
 
 
 def main(inputsbml, ignore_compartments, boundflag):
