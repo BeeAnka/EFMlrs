@@ -9,7 +9,6 @@ import efmlrs.preprocessing.compressions.many2one as many2one
 import efmlrs.preprocessing.compressions.nullspace as nullspace
 import efmlrs.preprocessing.compressions.echelon as echelon
 import efmlrs.preprocessing.mplrs_output as mplrs_output
-import efmlrs.preprocessing.mplrs_output_uncmp as mplrs_output_uncmp
 
 
 def main(inputsbml, ignore_compartments, boundflag):
@@ -28,7 +27,7 @@ def main(inputsbml, ignore_compartments, boundflag):
     efmlrs_start_compressions()
     smatrix, reactions, reversibilities, metabolites, model, core_name = get_data.run(inputsbml, ignore_compartments,
                                                                                       boundflag)
-    mplrs_output_uncmp.run(core_name)
+    mplrs_output.run_uncmp(core_name)
     rev_count = reversibilities4printing(reversibilities)
     print("Uncompressed network size:", smatrix.shape[1], "reactions (", rev_count, "reversible ) and", smatrix.shape[0],
           "metabolites.")
@@ -77,7 +76,7 @@ def main(inputsbml, ignore_compartments, boundflag):
     print("Writing files")
     write_info(core_name, reversibilities, outer_counter)
     write_all(smatrix, reactions, reversibilities, metabolites, core_name + "_cmp")
-    mplrs_output.run(core_name)
+    mplrs_output.run_cmp(core_name)
     write_cmp_int_matrix(core_name)
     efmlrs_finish_compressions()
 

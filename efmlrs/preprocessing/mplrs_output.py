@@ -69,9 +69,24 @@ def write_smatrix(mplrs_file, reconf_smatrix):
                 mplrs_file.write(format(0) + " ")
         mplrs_file.write("\n")
     mplrs_file.write("end" + "\n")
-
+    
 
 def write_lrs(core_name, reconf_smatrix):
+    """
+    Write input file for mplrs algorithm.
+
+    :param core_name: path to input file without extensions
+    :param reconf_smatrix: list of lists of reconfigured stoichiometric matrix
+    :return: None
+    """
+    core_name += ".ine"
+    mplrs_file = open(core_name, "w")
+    write_header(mplrs_file, core_name)
+    write_smatrix(mplrs_file, reconf_smatrix)
+    mplrs_file.close()
+
+
+def write_lrs_cmp(core_name, reconf_smatrix):
     """
     Write input file for mplrs algorithm.
 
@@ -86,7 +101,7 @@ def write_lrs(core_name, reconf_smatrix):
     mplrs_file.close()
 
 
-def run(core_name):
+def run_cmp(core_name):
     """
     Entry point for mplrs_output. Creates input file from sfile and rvfile suitable for mplrs algorithm.
 
@@ -95,6 +110,23 @@ def run(core_name):
     """
     smatrix = read_sfile(core_name + "_cmp")
     reversibilities = read_rvfile(core_name + "_cmp")
+
+    if len(smatrix) == 0:
+        print("*** SMATRIX EMPTY! ***")
+        print("*** NO INE FILE CREATED! ***")
+        return
+    reconfigured_smatrix = split_reversible_reas(smatrix, reversibilities)
+    write_lrs_cmp(core_name, reconfigured_smatrix)
+
+def run_uncmp(core_name):
+    """
+    Entry point for mplrs_output. Creates input file from sfile and rvfile suitable for mplrs algorithm.
+
+    :param core_name: path to input file without extensions
+    :return: None
+    """
+    smatrix = read_sfile(core_name)
+    reversibilities = read_rvfile(core_name)
 
     if len(smatrix) == 0:
         print("*** SMATRIX EMPTY! ***")
