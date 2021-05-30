@@ -74,5 +74,26 @@ class TestEFMlrs(unittest.TestCase):
         rmtree(TEST_DIR)
         assert(efmlrs.__version__)
 
+    def test_quickcheck_sbml_at_ecoli5010(self):
+        # create temporary working directory for test
+        TEST_DIR = tempfile.mkdtemp(TEMP_DIR)
+
+        # argument definitions
+        PATH = 'tests/example_models/'
+        MODEL = 'ecoli5010.xml'
+
+        # copy model
+        copyfile(PATH + MODEL, TEST_DIR + "/" + MODEL)
+
+        # do pre test (in TEST_DIR)
+        quickcheck_sbml.main(
+            TEST_DIR + "/" + MODEL,
+            '0.1',
+        )
+
+        # clean up
+        rmtree(TEST_DIR)
+        assert (efmlrs.__version__)
+
     def tearDown(self):
         pass

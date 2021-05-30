@@ -1,56 +1,70 @@
 import cobra
 import io
 from contextlib import redirect_stderr
-import efmlrs.preprocessing.boundaries as boundaries
-from efmlrs.util.data import *
-
+import preprocessing.boundaries as boundaries
+from util.data import *
 
 def read_model(input_filename):
     """
-    Reads metabolic model from sbml file using the "cobra.io.read_sbml_model" functions. Reads io string during reading
-    model.
-
+    Reads metabolic model from sbml file using the 'cobra.io.read_sbml_model' functions. Reads io string during reading
+    model and catches exchange reactions added by cobrapy. These reactions are going to be removed from the model again.
     :param input_filename: sbml file with cobrapy compatible metabolic model
     :return:
         - model - cobrapy model
-        - console_output - information from cobrapy during reading model
+        - reas_added - list of reactions added by cobrapy
     """
 
     stream = io.StringIO()
     with redirect_stderr(stream):
         model = cobra.io.read_sbml_model(input_filename)
     console_output = stream.getvalue()
-    return model, console_output
 
+    reas_added = []
+    for text in console_output.split('\n'):
+        if text.startswith("Adding exchange reaction"):
+            tmp = text.split()
+            reas_added.append(tmp[3])
 
-def get_added_reas_metas(model, added_info):
-    """
-    Extracts information on added exchange reactions and metabolites from cobrapy during reading sbml model.
+    return model, reas_added
 
-    :param model: cobrapy model
-    :param added_info: information from cobrapy during reading model
-    :return:
-        - ex_reas - list with reaction names added during reading sbml with cobrapy
-        - ex_metas - list with metabolite names added during reading sbml with cobrapy
-    """
-    ex_reas = []
-    ex_metas = []
-    external = []
-
-    for rea in added_info.split():
-        if rea.startswith("EX"):
-            ex_reas.append(rea)
-
-    for rea in ex_reas:
-        meta = rea[3:]
-        external.append(meta)
-
-    for meta in model.metabolites:
-        for ex_meta in external:
-            if ex_meta == meta.id:
-                ex_metas.append(meta)
-
-    return ex_reas, ex_metas
+# def read_model(input_filename):
+#     """
+#     Reads metabolic model from sbml file using the "cobra.io.read_sbml_model" functions. Reads io string during reading
+#     model.
+#
+#     :param input_filename: sbml file with cobrapy compatible metabolic model
+#     :return:
+#         - model - cobrapy model
+#         - console_output - information from cobrapy during reading model
+#     """
+#
+#     stream = io.StringIO()
+#     with redirect_stderr(stream):
+#         model = cobra.io.read_sbml_model(input_filename)
+#     console_output = stream.getvalue()
+#     return model, console_output
+#
+#
+# def get_added_reas(added_info):
+#     """
+#     Extracts information on added exchange reactions from cobrapy during reading sbml model.
+#
+#     :param added_info: information from cobrapy during reading model
+#     :return:
+#         - ex_reas - list with reaction names added during reading sbml with cobrapy
+#     """
+#     reas_added = []
+#     add = False
+#     for text in added_info.split():
+#         if add is True:
+#             reas_added.append(text)
+#             add = False
+#         else:
+#             if text.startswith("reaction"):
+#                 add = True
+#             else:
+#                 add = False
+#     return reas_added
 
 
 def rm_reactions(model, rea_list):
@@ -63,18 +77,6 @@ def rm_reactions(model, rea_list):
         - model - altered cobrapy model
     """
     model.remove_reactions(rea_list)
-    return model
-
-
-def rm_metabolites(model, meta_list):
-    """
-    Removes metabolites that were added by cobrapy.
-
-    :param model: cobrapy model
-    :param list meta_list: list of metabolite names that will be removed
-    :return: model: altered cobrapy model
-    """
-    model.remove_metabolites(meta_list)
     return model
 
 
@@ -94,7 +96,7 @@ def rm_metas_in_specified_compartment(comp, model):
     return model
 
 
-def compartments_2_rm(model, comp_list):
+def compartments_2_rm(model, comp_list: list):
     """
     Checks if compartment were specified to ignore and removes metabolites that belong to specified compartments.
 
@@ -102,9 +104,12 @@ def compartments_2_rm(model, comp_list):
     :param list comp_list: list of compartments that will be removed
     :return: model: altered cobrapy model
     """
-    if comp_list is None:
+
+    if len(comp_list) == 0:
+        print("Ignoring compartments: None")
         return model
     else:
+        print("Ignoring compartments:", comp_list)
         for comp in comp_list:
             rm_metas_in_specified_compartment(comp, model)
         return model
@@ -112,7 +117,7 @@ def compartments_2_rm(model, comp_list):
 
 def orphaned_metas_rm(model):
     """
-    Searches and removes orphaned metabolites from cobrapy model.
+    Searches and removes orphaned metabolites from cobrapy model. Orphaned metabolites are not involved in any reaction.
 
     :param model: cobrapy model
     :return: model: altered cobrapy model
@@ -124,8 +129,33 @@ def orphaned_metas_rm(model):
         involved_reas = len(meta_id.reactions)
         if involved_reas == 0:
             orphaned_metas.append(meta_id)
+
+    orphaned_metas4print = [meta.id for meta in orphaned_metas]
+    if len(orphaned_metas4print) != 0:
+        print("The following metabolites are orphans (not involved in any reaction) and will be removed from the model")
+        print(orphaned_metas4print)
     model.remove_metabolites(orphaned_metas)
     return model
+
+
+def rm_empty_reas(model):
+    reactions = [rea.id for rea in model.reactions]
+    i = 0
+    empty_rea = []
+    for rea in reactions:
+        rea = model.reactions.get_by_id(rea)
+        reactants = rea.reactants
+        products = rea.products
+        if len(reactants) == 0 and len(products) == 0:
+            i += 1
+            empty_rea.append(rea)
+    if len(empty_rea) != 0:
+        rm_reactions(model, empty_rea)
+        print(len(empty_rea), 'empty reactions removed from the model')
+    else:
+        print('no empty reactions')
+    return model
+
 
 
 def get_smatrix(model):
@@ -196,23 +226,31 @@ def run(inputfile, ignore_compartments, boundflag):
         - core_name - path to input file without extensions
     """
 
-    print("Reading input file:", inputfile)
-    model, added_info = read_model(inputfile)
-    ex_reas, ex_metas = get_added_reas_metas(model, added_info)
-    model = rm_reactions(model, ex_reas)
-    model = rm_metabolites(model, ex_metas)
-    core_name = inputfile[:-4]
+    # print("Reading input file:", inputfile)
+    # model, added_info = read_model(inputfile)
+    # reas_added = get_added_reas(added_info)
 
-    print("Ignoring compartments:", ignore_compartments)
+    model, reas_added = read_model(inputfile)
+
+    model = rm_reactions(model, reas_added)
+
     model = compartments_2_rm(model, ignore_compartments)
     model = orphaned_metas_rm(model)
 
+    # test ausstehend!
+    model = rm_empty_reas(model)
+    # test ausstehend!
+
+
     model.reactions.sort()
     model.metabolites.sort()
+
     smatrix = get_smatrix(model)
     reactions = [rea.id for rea in model.reactions]
     reversibilities = [rea.reversibility for rea in model.reactions]
     metabolites = [meta.id for meta in model.metabolites]
+    core_name = inputfile[:-4]
+
 
     if boundflag is True:
         smatrix, reactions, reversibilities, metabolites, bound_counter = check_bounds(model, smatrix, reactions,
@@ -232,6 +270,7 @@ def run(inputfile, ignore_compartments, boundflag):
 
         smatrix_list = list(smatrix)
         write_sfile_float(core_name, smatrix_list)
+
         write_initial_files_no_bounds(core_name, reactions, reversibilities, metabolites)
 
         smatrix_fraction = convert_float2fraction(smatrix)

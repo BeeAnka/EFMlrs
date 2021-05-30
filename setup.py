@@ -41,7 +41,8 @@ setup(
     entry_points={
         'console_scripts':[
             'efmlrs_pre=efmlrs.pre:start_from_command_line',
-            'efmlrs_post=efmlrs.post:start_from_command_line'
+            'efmlrs_post=efmlrs.post:start_from_command_line',
+            'quickcheck_sbml=quickcheck_sbml:start_from_command_line'
             ],
         },
     include_package_data=True,

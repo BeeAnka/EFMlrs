@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" xmlns:groups="http://www.sbml.org/sbml/level3/version1/groups/version1" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false" groups:required="false">
-  <model metaid="meta_Ecoli_core_model" id="Ecoli_core_model" name="Ecoli_core_model" fbc:strict="true">
+  <model metaid="ecoli5010" id="ecoli5010" name="ecoli5010" fbc:strict="true">
     <listOfUnitDefinitions>
       <unitDefinition id="mmol_per_gDW_per_hr">
         <listOfUnits>
@@ -151,7 +151,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_atpmain_b" name="ATP" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C10H12N5O13P3">
+      <species id="M_atpmain_b" name="ATP" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C10H12N5O13P3">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 30616</p>
@@ -525,7 +525,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_ac_b" name="ac_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H3O2">
+      <species id="M_ac_b" name="ac_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C2H3O2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 30089</p>
@@ -534,7 +534,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_co2_b" name="co2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2">
+      <species id="M_co2_b" name="co2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="CO2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 16526</p>
@@ -543,7 +543,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_etoh_b" name="etoh_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H6O">
+      <species id="M_etoh_b" name="etoh_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C2H6O">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 16236</p>
@@ -552,7 +552,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_for_b" name="for_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH1O2">
+      <species id="M_for_b" name="for_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="CH1O2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15740</p>
@@ -561,7 +561,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_h2_b" name="h2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2">
+      <species id="M_h2_b" name="h2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="H2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>FORMULA: H2</p>
@@ -569,7 +569,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_glc_D_b" name="glc_D_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+      <species id="M_glc_D_b" name="glc_D_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C6H12O6">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 4167</p>
@@ -578,7 +578,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_lac_D_b" name="lac_D_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O3">
+      <species id="M_lac_D_b" name="lac_D_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C3H5O3">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 16004</p>
@@ -587,7 +587,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_nh4_b" name="nh4_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H4N">
+      <species id="M_nh4_b" name="nh4_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="H4N">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 28938</p>
@@ -596,7 +596,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_succ_b" name="succ_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O4">
+      <species id="M_succ_b" name="succ_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C4H4O4">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 30031</p>
@@ -613,7 +613,7 @@
       <parameter sboTerm="SBO:0000625" id="minus_inf" value="-INF" constant="true"/>
       <parameter sboTerm="SBO:0000625" id="plus_inf" value="INF" constant="true"/>
       <parameter sboTerm="SBO:0000625" id="R_ATPM_lower_bound" value="8.39" units="mmol_per_gDW_per_hr" constant="true"/>
-      <parameter sboTerm="SBO:0000625" id="R_EX_glc_e_lower_bound" value="-10" units="mmol_per_gDW_per_hr" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="R_EX_glc_e_lower_bound" value="0" units="mmol_per_gDW_per_hr" constant="true"/>
     </listOfParameters>
     <listOfReactions>
       <reaction id="R_PGI" name="glucose-6-phosphate isomerase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
@@ -1663,7 +1663,7 @@
           <speciesReference species="M_nadp_c" stoichiometry="18.32" constant="true"/>
         </listOfProducts>
       </reaction>
-      <reaction id="R_ATPM" name="ATP maintenance requirement" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_ATPM" name="ATP maintenance requirement" reversible="false" fast="false" fbc:lowerFluxBound="R_ATPM_lower_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: Oxidative Phosphorylation</p>
@@ -1928,7 +1928,7 @@
           <speciesReference species="M_for_b" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
-      <reaction id="R_EX_glc_e" name="D-Glucose exchange" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_EX_glc_e" name="D-Glucose exchange" reversible="false" fast="false" fbc:lowerFluxBound="R_EX_glc_e_lower_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>SUBSYSTEM: Exchange</p>

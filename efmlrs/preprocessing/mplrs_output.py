@@ -110,10 +110,15 @@ def run_cmp(core_name):
     """
     smatrix = read_sfile(core_name + "_cmp")
     reversibilities = read_rvfile(core_name + "_cmp")
+    reactions = read_rfile(core_name + "_cmp")
 
     if len(smatrix) == 0:
-        print("*** SMATRIX EMPTY! ***")
         print("*** NO INE FILE CREATED! ***")
+        if len(reactions) > 0:
+            print("*** solved due to compression ***")
+            print("EFMs = ", len(reactions))
+        else:
+            print("*** SMATRIX EMPTY! ***")
         return
     reconfigured_smatrix = split_reversible_reas(smatrix, reversibilities)
     write_lrs_cmp(core_name, reconfigured_smatrix)
@@ -127,10 +132,15 @@ def run_uncmp(core_name):
     """
     smatrix = read_sfile(core_name)
     reversibilities = read_rvfile(core_name)
+    reactions = read_rfile(core_name)
 
     if len(smatrix) == 0:
-        print("*** SMATRIX EMPTY! ***")
         print("*** NO INE FILE CREATED! ***")
+        if len(reactions) > 0:
+            print("*** solved due to compression ***")
+            print("EFMs = ", len(reactions))
+        else:
+            print("*** SMATRIX EMPTY! ***")
         return
     reconfigured_smatrix = split_reversible_reas(smatrix, reversibilities)
     write_lrs(core_name, reconfigured_smatrix)
