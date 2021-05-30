@@ -301,16 +301,13 @@ def main(inputsbml, fraction_optimum):
         print('Exact FVA results can be found in *_reactions.txt')
 
 
-if __name__ == '__main__':
+def start_from_command_line():
     DEFFILE = '../tests/example_models/ecoli5010.xml'
     DEFFRO = 0.1
 
-    parser = ArgumentParser(description='Quickcheck for sbml file before compressions with EFMlrs and later EFM/V calculations with efmtool or mplrs', formatter_class=SmartFormatter)
+    parser = ArgumentParser(description='Quickcheck for sbml file before compressions with EFMlrs and later EFM/V calculations with efmtool or mplrs')
     parser.add_argument('-s', '--sbmlinput', help='input is name of the sbml model')
-    parser.add_argument('-f', '--fraction_optimum', help='float, optional fraction of optimum parameter for cobrapy function: flux_variability_analysis():\n'
-                                        'Must be <= 1.0. Requires that the objective value is at least the fraction times maximum objective value. \n'
-                                        'A value of 0.85 for instance means that the objective has to be at least at 85% percent of its maximum \n'
-                                        'https://cobrapy.readthedocs.io/en/latest/_modules/cobra/flux_analysis/variability.html', default=DEFFRO)
+    parser.add_argument('-f', '--fraction_optimum', help='float (optional, default=0.1) - fraction of optimum parameter for cobrapy function: flux_variability_analysis(): Must be <= 1.0. Requires that the objective value is at least the fraction times maximum objective value. A value of 0.85 for instance means that the objective has to be at least at 85%% percent of its maximum https://cobrapy.readthedocs.io/en/latest/_modules/cobra/flux_analysis/variability.html', default=DEFFRO)
 
     args = parser.parse_args()
 
@@ -323,3 +320,6 @@ if __name__ == '__main__':
     except Exception:
         print('crashed...')
         raise
+
+if __name__ == "__main__":
+    start_from_command_line()
