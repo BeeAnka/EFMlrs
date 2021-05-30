@@ -3,7 +3,7 @@ import io
 from contextlib import redirect_stderr
 import cobra
 from cobra.flux_analysis import flux_variability_analysis
-
+import sys
 
 def read_model(input_filename):
     """
@@ -306,9 +306,14 @@ if __name__ == '__main__':
     DEFFRO = 0.1
 
     parser = ArgumentParser(description='')
-    parser.add_argument('-s', '--sbmlinput', help='input is name of the sbml model', default=DEFFILE)
+    parser.add_argument('-s', '--sbmlinput', help='input is name of the sbml model')
     parser.add_argument('-f', '--fraction_optimum', help='"fraction of optimum parameter" for cobrapy function: flux_variability_analysis()', default=DEFFRO)
+
     args = parser.parse_args()
+
+    if len(sys.argv) == 1:
+        parser.print_help(sys.stderr)
+        sys.exit(1)
 
     try:
         main(args.sbmlinput, args.fraction_optimum)
