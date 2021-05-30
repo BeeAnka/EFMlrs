@@ -2,7 +2,7 @@ import cobra
 import io
 from contextlib import redirect_stderr
 import efmlrs.preprocessing.boundaries as boundaries
-from util.data import *
+from efmlrs.util.data import *
 
 def read_model(input_filename):
     """
