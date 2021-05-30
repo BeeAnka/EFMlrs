@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1" fbc:required="false" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2">
-   <model id="CNA_EColiCore2_compressed_" name="EColiCore2-compressed " fbc:strict="true">
+   <model id="EColiCore2" name="EColiCore2" fbc:strict="true">
       <listOfCompartments>
          <compartment id="External_Species" name="e" constant="true"/>
          <compartment id="Internal_Species" name="i" constant="true"/>
@@ -102,7 +102,7 @@
          <species id="M_zn2_ex" name="M_zn2_ex" boundaryCondition="true" compartment="External_Species" constant="false" hasOnlySubstanceUnits="false"/>
       </listOfSpecies>
       <listOfReactions>
-         <reaction id="Growth" name="Growth" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
+         <reaction id="R_Growth" name="R_Growth" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_3pg_c" stoichiometry="1.7178" constant="true"/>
                <speciesReference species="M_accoa_c" stoichiometry="3.8579" constant="true"/>
@@ -159,7 +159,7 @@
                <speciesReference species="M_succ_c" stoichiometry="0.85927" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_ACALD" name="R_ACALD" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_ACALD" name="R_ACALD" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_accoa_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_h_c" stoichiometry="1" constant="true"/>
@@ -191,7 +191,7 @@
                <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_ACONTa" name="R_ACONTa" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_ACONTa" name="R_ACONTa" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_cit_c" stoichiometry="1" constant="true"/>
             </listOfReactants>
@@ -200,7 +200,7 @@
                <speciesReference species="M_h2o_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_ACONTb" name="R_ACONTb" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_ACONTb" name="R_ACONTb" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_acon_DASH_C_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_h2o_c" stoichiometry="1" constant="true"/>
@@ -219,7 +219,7 @@
                <speciesReference species="M_h_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_ADK1" name="R_ADK1" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_ADK1" name="R_ADK1" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_amp_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
@@ -240,7 +240,7 @@
                <speciesReference species="M_succoa_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_ALCD2x" name="R_ALCD2x" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_ALCD2x" name="R_ALCD2x" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_acald_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_h_c" stoichiometry="1" constant="true"/>
@@ -349,7 +349,7 @@
                <speciesReference species="M_etoh_ex" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_F6PA" name="R_F6PA" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_F6PA" name="R_F6PA" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_dha_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_g3p_c" stoichiometry="1" constant="true"/>
@@ -435,7 +435,7 @@
                <speciesReference species="M_q8h2_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_G6PDH2r" name="R_G6PDH2r" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_G6PDH2r" name="R_G6PDH2r" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_g6p_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
@@ -572,7 +572,7 @@
                <speciesReference species="M_h_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_ICDHyr" name="R_ICDHyr" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_ICDHyr" name="R_ICDHyr" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_icit_c" stoichiometry="1" constant="true"/>
                <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
@@ -701,7 +701,7 @@
                <speciesReference species="M_nadp_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_O2Up" name="R_O2Up" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_O2Up" name="R_O2Up" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
                <speciesReference species="M_o2_ex" stoichiometry="1" constant="true"/>
             </listOfReactants>
@@ -855,12 +855,12 @@
                <speciesReference species="M_xu5p_DASH_D_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
-         <reaction id="R_RPI" name="R_RPI" fast="false" fbc:lowerFluxBound="par3" fbc:upperFluxBound="par2" reversible="true">
+         <reaction id="R_RPI" name="R_RPI" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
             <listOfReactants>
-               <speciesReference species="M_r5p_c" stoichiometry="1" constant="true"/>
+               <speciesReference species="M_ru5p_DASH_D_c" stoichiometry="1" constant="true"/>
             </listOfReactants>
             <listOfProducts>
-               <speciesReference species="M_ru5p_DASH_D_c" stoichiometry="1" constant="true"/>
+                <speciesReference species="M_r5p_c" stoichiometry="1" constant="true"/>
             </listOfProducts>
          </reaction>
          <reaction id="R_SuccEx" name="R_SuccEx" fast="false" fbc:lowerFluxBound="par1" fbc:upperFluxBound="par2" reversible="false">
@@ -981,7 +981,7 @@
       <fbc:listOfObjectives fbc:activeObjective="objective1">
          <fbc:objective fbc:id="objective1" fbc:type="maximize">
             <fbc:listOfFluxObjectives>
-               <fbc:fluxObjective fbc:reaction="Growth" fbc:coefficient="1"/>
+               <fbc:fluxObjective fbc:reaction="R_Growth" fbc:coefficient="1"/>
             </fbc:listOfFluxObjectives>
          </fbc:objective>
       </fbc:listOfObjectives>

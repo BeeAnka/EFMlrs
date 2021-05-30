@@ -9,6 +9,6 @@ sm04_JCVI-syn3A.xml: includes 4 of 22 non-essential uptake reactions
 sm07_JCVI-syn3A.xml: includes 7 of 22 non-essential uptake reactions
 sm08_JCVI-syn3A.xml: includes 8 of 22 non-essential uptake reactions
 sm15_JCVI-syn3A.xml: includes 15 of 22 non-essential uptake reactions
-sm22_JCVI-syn3A.xml: includes all non-essential uptake reactions
+sm22_JCVI-syn3A.xml: includes all 22 non-essential uptake reactions
 
 Further information on calculations and results can be found: (comming as soon as published)

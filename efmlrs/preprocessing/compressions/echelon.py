@@ -11,9 +11,8 @@ def find_redundant_metabolites(smatrix, inner_counter):
     :param int inner_counter: integer that counts iterative steps of nullspace compression
     :return: list redundant_metas: list of metabolites to be removed
     """
-    # print("Start reduced row echelon form calculations", str(inner_counter) + ". This may take a while")
+    print("Start reduced row echelon form calculations", str(inner_counter), ". This may take a while")
     echelon = smatrix.T.rref(simplify=True, pivots=False)
-    # print("Done reduced row echelon form calculations.")
     columns = echelon.shape[1]
     rows = echelon.shape[0]
     redundant_metas = []

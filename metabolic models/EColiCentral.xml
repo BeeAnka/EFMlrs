@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" xmlns:groups="http://www.sbml.org/sbml/level3/version1/groups/version1" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false" groups:required="false">
-  <model metaid="meta_Ecoli_core_model" id="Ecoli_core_model" name="Ecoli_core_model" fbc:strict="true">
+  <model metaid="EColiCentral" id="EColiCentral" name="EColiCentral" fbc:strict="true">
     <listOfUnitDefinitions>
       <unitDefinition id="mmol_per_gDW_per_hr">
         <listOfUnits>
@@ -69,7 +69,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_ac_b" name="Acetate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H3O2">
+      <species id="M_ac_b" name="Acetate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C2H3O2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 30089</p>
@@ -150,7 +150,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_ara_L_b" name="L-Arabinose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H10O5">
+      <species id="M_ara_L_b" name="L-Arabinose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C5H10O5">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 17535</p>
@@ -168,7 +168,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_atpmain_b" name="ATP" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C10H12N5O13P3">
+      <species id="M_atpmain_b" name="ATP" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C10H12N5O13P3">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 30616</p>
@@ -195,7 +195,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_co2_b" name="CO2" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2">
+      <species id="M_co2_b" name="CO2" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="CO2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 16526</p>
@@ -249,7 +249,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_etoh_b" name="Ethanol" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C2H6O">
+      <species id="M_etoh_b" name="Ethanol" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C2H6O">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 16236</p>
@@ -284,7 +284,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_for_b" name="Formate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH1O2">
+      <species id="M_for_b" name="Formate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="CH1O2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15740</p>
@@ -293,7 +293,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_fru_b" name="D-Fructose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+      <species id="M_fru_b" name="D-Fructose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C6H12O6">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15824</p>
@@ -311,7 +311,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_fum_b" name="Fumarate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H2O4">
+      <species id="M_fum_b" name="Fumarate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C4H2O4">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 29806</p>
@@ -347,7 +347,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_gal_b" name="D-Galactose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+      <species id="M_gal_b" name="D-Galactose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C6H12O6">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 4139</p>
@@ -356,7 +356,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_glc_D_b" name="D-Glucose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+      <species id="M_glc_D_b" name="D-Glucose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C6H12O6">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 4167</p>
@@ -374,7 +374,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_h2_b" name="h2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2">
+      <species id="M_h2_b" name="h2_b" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="H2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>FORMULA: H2</p>
@@ -400,7 +400,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_lac_D_b" name="D-Lactate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H5O3">
+      <species id="M_lac_D_b" name="D-Lactate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C3H5O3">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 16004</p>
@@ -426,7 +426,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_mal_L_b" name="L-Malate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O5">
+      <species id="M_mal_L_b" name="L-Malate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C4H4O5">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15589</p>
@@ -435,7 +435,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_man_b" name="D-Mannose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C6H12O6">
+      <species id="M_man_b" name="D-Mannose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C6H12O6">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 4208</p>
@@ -489,7 +489,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_nh4_b" name="Ammonium" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H4N">
+      <species id="M_nh4_b" name="Ammonium" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="H4N">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 28938</p>
@@ -498,7 +498,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_o2_b" name="O2" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="O2">
+      <species id="M_o2_b" name="O2" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="O2">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15379</p>
@@ -542,7 +542,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_pyr_b" name="Pyruvate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C3H3O3">
+      <species id="M_pyr_b" name="Pyruvate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C3H3O3">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15361</p>
@@ -604,7 +604,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_succ_b" name="Succinate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C4H4O4">
+      <species id="M_succ_b" name="Succinate" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C4H4O4">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 30031</p>
@@ -640,7 +640,7 @@
           </html>
         </notes>
       </species>
-      <species id="M_xylo_b" name="D-Xylose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H10O5">
+      <species id="M_xylo_b" name="D-Xylose" compartment="C_b" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false" fbc:chemicalFormula="C5H10O5">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>CHEBI: 15936</p>
@@ -1017,7 +1017,7 @@
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction id="R_RPI" name="ribose-5-phosphate isomerase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_RPI" name="ribose-5-phosphate isomerase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>GENE_ASSOCIATION: ( b2914  or  b4090 )</p>
@@ -1027,10 +1027,10 @@
           </html>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_r5p_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_ru5p_D_c" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_ru5p_D_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_r5p_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:or>
@@ -1132,7 +1132,7 @@
           <fbc:geneProductRef fbc:geneProduct="G_b0720"/>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction id="R_ACONTa" name="aconitase (half-reaction A, Citrate hydro-lyase)" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_ACONTa" name="aconitase (half-reaction A, Citrate hydro-lyase)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>GENE_ASSOCIATION: (b0118 or b1276)</p>
@@ -1154,7 +1154,7 @@
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction id="R_ACONTb" name="aconitase (half-reaction B, Isocitrate hydro-lyase)" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_ACONTb" name="aconitase (half-reaction B, Isocitrate hydro-lyase)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>GENE_ASSOCIATION: (b0118 or b1276)</p>
@@ -1225,7 +1225,7 @@
           </fbc:and>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction id="R_SUCOAS" name="succinyl-CoA synthetase (ADP-forming)" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_SUCOAS" name="succinyl-CoA synthetase (ADP-forming)" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>GENE_ASSOCIATION: ( b0728  and  b0729 )</p>
@@ -1235,13 +1235,13 @@
           </html>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_succoa_c" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_adp_c" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_succoa_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_atp_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_coa_c" stoichiometry="1" constant="true"/>
+            <speciesReference species="M_succ_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <fbc:geneProductAssociation>
           <fbc:and>
@@ -2060,7 +2060,7 @@
           </fbc:or>
         </fbc:geneProductAssociation>
       </reaction>
-      <reaction id="R_ADK1" name="adenylate kinase" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+      <reaction id="R_ADK1" name="adenylate kinase" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <notes>
           <html xmlns="http://www.w3.org/1999/xhtml">
             <p>GENE_ASSOCIATION: b0474</p>

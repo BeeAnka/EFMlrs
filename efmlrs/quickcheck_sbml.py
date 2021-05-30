@@ -305,9 +305,12 @@ if __name__ == '__main__':
     DEFFILE = '../tests/example_models/ecoli5010.xml'
     DEFFRO = 0.1
 
-    parser = ArgumentParser(description='')
+    parser = ArgumentParser(description='Quickcheck for sbml file before compressions with EFMlrs and later EFM/V calculations with efmtool or mplrs', formatter_class=SmartFormatter)
     parser.add_argument('-s', '--sbmlinput', help='input is name of the sbml model')
-    parser.add_argument('-f', '--fraction_optimum', help='"fraction of optimum parameter" for cobrapy function: flux_variability_analysis()', default=DEFFRO)
+    parser.add_argument('-f', '--fraction_optimum', help='float, optional fraction of optimum parameter for cobrapy function: flux_variability_analysis():\n'
+                                        'Must be <= 1.0. Requires that the objective value is at least the fraction times maximum objective value. \n'
+                                        'A value of 0.85 for instance means that the objective has to be at least at 85% percent of its maximum \n'
+                                        'https://cobrapy.readthedocs.io/en/latest/_modules/cobra/flux_analysis/variability.html', default=DEFFRO)
 
     args = parser.parse_args()
 

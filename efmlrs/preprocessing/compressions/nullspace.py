@@ -70,7 +70,6 @@ def search_multiples(kernel):
 
 
 def test_results(column_index, index_multiples, smatrix, reversibilities):
-    ## TODO returns auflösen und prüfen
     """
     Checks if current reaction is marked for merge, if yes merges reactions and builds new merged reaction. Checks
     reversibilities of reactions to merge. Returns information if new reaction was build, new merged reaction or empty
@@ -112,7 +111,6 @@ def test_results(column_index, index_multiples, smatrix, reversibilities):
 
 
 def merge_multiples(smatrix, reversibilities, reactions, index_multiples):
-    ## TODO rename
     """
     Merges reactions, builds new merged reaction, removes old reactions and builds new stoichiometric matrix, new
     reversibilities and new reaction name list. Writes merge information to log file.
@@ -210,7 +208,7 @@ def iterate(smatrix, metabolites, reactions, reversibilities, nullspace_infos, i
         - nullspace_infos - list containing reaction indices_names and their multiplication factor
         - bool: indicating if nullspace compression loop is done (True) or not (False)
     """
-    # print("Start null space compressions round", str(inner_counter) + ". This may take a while")
+    print("Start null space compressions round", str(inner_counter), ". This may take a while")
     K = smatrix.nullspace()
     if len(K) == 0:
         print("KERNELMATRIX is EMPTY")

@@ -2,5 +2,5 @@ ecoli5010.xml obtained from: Cong T. Trinh, Pornkamol Unrean, and Friedrich Srie
 
 EColiCentral.xml obtained from: Hädicke, O., Klamt, S.: EColiCore2 : a reference network model of thecentral metabolism of Escherichia coli and relationships to its genome-scale parent model (2017), doi:10.1038/srep39647
 
-iPS189.xml obtained from: Suthers, P.F., Dasika, M.S., Kumar, V.S., Denisov, G., Glass, J.I.,Maranas, C.D.: A Genome-Scale Metabolic Reconstruction ofMycoplasma genitalium, iPS189 (2009), doi:10.1371/journal.pcbi.1000285
+iPS189.xml obtained from: Suthers, P.F., Dasika, M.S., Kumar, V.S., Denisov, G., Glass, J.I.,Maranas, C.D.: A Genome-Scale Metabolic Reconstruction ofMycoplasma genitalium, iPS189 (2009), doi:10.1371/journal.pcbi.1000285. Attention for current version FBA/FVA not working - updated model will be provided soon. 
 

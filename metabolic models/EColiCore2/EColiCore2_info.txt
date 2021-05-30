@@ -1,3 +1,9 @@
-EColiCore2 was obtained from Hadicke, O., Klamt, S.: EColiCore2 : a reference network model of thecentral metabolism of Escherichia coli and relationships to itsgenome-scale parent model (doi:10.1038/srep39647)
+EColiCore2 was obtained from Hadicke, O., Klamt, S.: EColiCore2 : a reference network model of thecentral metabolism of Escherichia coli and relationships to its genome-scale parent model (doi:10.1038/srep39647)
 
 Besides this version (EColiCore2.xml) we provide a version (EColiCore2_bounds.xml) that includes additional boundaries on GlcUP, ATPM and O2Up but with all other carbon uptake reactions (as well as the resulting orphaned metabolites) removed.
+
+Carbon uptake reactions (removed): R_AcUp, R_CO2Up, R_GlycUP, R_SuccUP
+
+resulting zero flux reactions (removed): R_F6PA, R_GLYCDx, R_GLYK
+
+resulting orphaned metabolites (removed): M_dha_c, M_glyc

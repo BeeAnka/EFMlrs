@@ -27,45 +27,6 @@ def read_model(input_filename):
 
     return model, reas_added
 
-# def read_model(input_filename):
-#     """
-#     Reads metabolic model from sbml file using the "cobra.io.read_sbml_model" functions. Reads io string during reading
-#     model.
-#
-#     :param input_filename: sbml file with cobrapy compatible metabolic model
-#     :return:
-#         - model - cobrapy model
-#         - console_output - information from cobrapy during reading model
-#     """
-#
-#     stream = io.StringIO()
-#     with redirect_stderr(stream):
-#         model = cobra.io.read_sbml_model(input_filename)
-#     console_output = stream.getvalue()
-#     return model, console_output
-#
-#
-# def get_added_reas(added_info):
-#     """
-#     Extracts information on added exchange reactions from cobrapy during reading sbml model.
-#
-#     :param added_info: information from cobrapy during reading model
-#     :return:
-#         - ex_reas - list with reaction names added during reading sbml with cobrapy
-#     """
-#     reas_added = []
-#     add = False
-#     for text in added_info.split():
-#         if add is True:
-#             reas_added.append(text)
-#             add = False
-#         else:
-#             if text.startswith("reaction"):
-#                 add = True
-#             else:
-#                 add = False
-#     return reas_added
-
 
 def rm_reactions(model, rea_list):
     """
@@ -157,7 +118,6 @@ def rm_empty_reas(model):
     return model
 
 
-
 def get_smatrix(model):
     """
     Gets stoichiometric matrix from cobrapy model using the cobrapy function
@@ -226,31 +186,18 @@ def run(inputfile, ignore_compartments, boundflag):
         - core_name - path to input file without extensions
     """
 
-    # print("Reading input file:", inputfile)
-    # model, added_info = read_model(inputfile)
-    # reas_added = get_added_reas(added_info)
-
     model, reas_added = read_model(inputfile)
-
     model = rm_reactions(model, reas_added)
-
     model = compartments_2_rm(model, ignore_compartments)
     model = orphaned_metas_rm(model)
-
-    # test ausstehend!
     model = rm_empty_reas(model)
-    # test ausstehend!
-
-
     model.reactions.sort()
     model.metabolites.sort()
-
     smatrix = get_smatrix(model)
     reactions = [rea.id for rea in model.reactions]
     reversibilities = [rea.reversibility for rea in model.reactions]
     metabolites = [meta.id for meta in model.metabolites]
     core_name = inputfile[:-4]
-
 
     if boundflag is True:
         smatrix, reactions, reversibilities, metabolites, bound_counter = check_bounds(model, smatrix, reactions,
