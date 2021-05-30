@@ -307,7 +307,7 @@ def start_from_command_line():
 
     parser = ArgumentParser(description='Quickcheck for sbml file before compressions with EFMlrs and later EFM/V calculations with efmtool or mplrs')
     parser.add_argument('-s', '--sbmlinput', help='input is name of the sbml model')
-    parser.add_argument('-f', '--fraction_optimum', help='float (optional, default=0.1) - fraction of optimum parameter for cobrapy function: flux_variability_analysis(): Must be <= 1.0. Requires that the objective value is at least the fraction times maximum objective value. A value of 0.85 for instance means that the objective has to be at least at 85%% percent of its maximum https://cobrapy.readthedocs.io/en/latest/_modules/cobra/flux_analysis/variability.html', default=DEFFRO)
+    parser.add_argument('-f', '--fraction_optimum', help='float (optional, default=0.1) - fraction of optimum parameter for cobrapy function: flux_variability_analysis(): Must be <= 1.0. Requires that the objective value is at least the fraction times maximum objective value. A value of 0.85 for instance means that the objective has to be at least at 85 percent of its maximum https://cobrapy.readthedocs.io/en/latest/_modules/cobra/flux_analysis/variability.html', default=DEFFRO)
 
     args = parser.parse_args()
 
