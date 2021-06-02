@@ -4,7 +4,7 @@ For compressions with EFMlrs and latter calculations of EFM/Vs with either efmto
 * must be compatible with COBRApy
 * reactions - reversible and irreversible - have to be in the forward directions so that the flux direction goes from minimum to maximum
 * reversible reactions with only positive fluxes should be made irreversible
-* reactions with zero flux should be removed from the model to speed up run time of both * compressions and calculations
+* reactions with zero flux and FVA min = FVA max = 0, should be removed from the model to speed up run time of both * compressions and calculations
 
 ### Description
 Quickcheck_sbml is a small Python script that quickly checks if a sbml fulfills the criteria listed above. It uses uses COBRApy functions to
