@@ -3,6 +3,7 @@ import io
 from contextlib import redirect_stderr
 import efmlrs.preprocessing.boundaries as boundaries
 from efmlrs.util.data import *
+import optlang
 
 def read_model(input_filename):
     """
@@ -13,7 +14,8 @@ def read_model(input_filename):
         - model - cobrapy model
         - reas_added - list of reactions added by cobrapy
     """
-
+    
+    optlang.glpk_interface.Configuration()
     stream = io.StringIO()
     with redirect_stderr(stream):
         model = cobra.io.read_sbml_model(input_filename)
@@ -66,7 +68,7 @@ def compartments_2_rm(model, comp_list: list):
     :return: model: altered cobrapy model
     """
 
-    if len(comp_list) == 0:
+    if comp_list is None or len(comp_list) == 0:
         print("Ignoring compartments: None")
         return model
     else:
