@@ -32,29 +32,35 @@ Now preprocessing and compression start. Detailed information is given via termi
       `"´   `"´   `"´    
      start compressions   
                           
-Reading input file: ecoli5010.xml
 Ignoring compartments: ['C_b']
-Uncompressed network size: 68 reactions ( 12 reversible ) and 56 metabolites.
+no empty reactions
+Uncompressed network size: 68 reactions ( 11 reversible ) and 56 metabolites.
 ========================================================================
 START COMPRESSIONS
 *** Compression round: 1 ***
 Start deadend compression...
-Done deadend compression. Network size: 56 metabolites and 68 reactions ( 12 reversible )
+Done deadend compression. Network size: 56 metabolites and 68 reactions ( 11 reversible )
 Start many2one compression...
-Done many2one compression. Network size: 28 metabolites and 40 reactions ( 12 reversible )
+Done many2one compression. Network size: 27 metabolites and 39 reactions ( 11 reversible )
 Start nullspace compression...
-Done nullspace compression. Network size: 25 metabolites and 37 reactions ( 12 reversible )
+Start null space compressions round 1 . This may take a while
+Start null space compressions round 2 . This may take a while
+Done nullspace compression. Network size: 25 metabolites and 37 reactions ( 11 reversible )
 Start echelon compressions...
-Done echelon compression. Network size: 20 metabolites and 37 reactions ( 12 reversible )
+Start reduced row echelon form calculations 1 . This may take a while
+Start reduced row echelon form calculations 2 . This may take a while
+Done echelon compression. Network size: 20 metabolites and 37 reactions ( 11 reversible )
 *** Compression round: 2 ***
 Start deadend compression...
-Done deadend compression. Network size: 20 metabolites and 37 reactions ( 12 reversible )
+Done deadend compression. Network size: 20 metabolites and 37 reactions ( 11 reversible )
 Start many2one compression...
-Done many2one compression. Network size: 20 metabolites and 37 reactions ( 12 reversible )
+Done many2one compression. Network size: 20 metabolites and 37 reactions ( 11 reversible )
 Start nullspace compression...
-Done nullspace compression. Network size: 20 metabolites and 37 reactions ( 12 reversible )
+Start null space compressions round 1 . This may take a while
+Done nullspace compression. Network size: 20 metabolites and 37 reactions ( 11 reversible )
 Start echelon compressions...
-Done echelon compression. Network size: 20 metabolites and 37 reactions ( 12 reversible )
+Start reduced row echelon form calculations 1 . This may take a while
+Done echelon compression. Network size: 20 metabolites and 37 reactions ( 11 reversible )
 *** COMPRESSIONS DONE after: 2 rounds ***
 ========================================================================
 Compressed network size: 37 reactions ( 9 reversible ) and 20 metabolites.
