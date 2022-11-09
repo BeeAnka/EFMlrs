@@ -1,0 +1,192 @@
+2022-11-09 09:53:21.481082 *** efmlrs.preprocessing.compressions.deadend ***
+2022-11-09 09:53:21.492718 *** efmlrs.preprocessing.compressions.many2one ***
+2022-11-09 09:53:21.516733 deleting metabolite 13dpg_c 
+2022-11-09 09:53:21.522292 deleting metabolite 2pg_c 
+2022-11-09 09:53:21.528846 deleting metabolite 3pg_c 
+2022-11-09 09:53:21.534904 deleting metabolite 6pgc_c 
+2022-11-09 09:53:21.540869 deleting metabolite 6pgl_c 
+2022-11-09 09:53:21.546751 deleting metabolite ac_c 
+2022-11-09 09:53:21.552576 deleting metabolite ac_e 
+2022-11-09 09:53:21.558301 deleting metabolite acald_c 
+2022-11-09 09:53:21.563473 deleting metabolite acon_C_c 
+2022-11-09 09:53:21.568580 deleting metabolite actp_c 
+2022-11-09 09:53:21.574814 deleting metabolite akg_c 
+2022-11-09 09:53:21.580014 deleting metabolite amp_c 
+2022-11-09 09:53:21.585282 deleting metabolite cit_c 
+2022-11-09 09:53:21.590666 deleting metabolite co2_e 
+2022-11-09 09:53:21.596189 deleting metabolite dd6pg_c 
+2022-11-09 09:53:21.602531 deleting metabolite etoh_c 
+2022-11-09 09:53:21.608817 deleting metabolite etoh_e 
+2022-11-09 09:53:21.615205 deleting metabolite for_c 
+2022-11-09 09:53:21.620822 deleting metabolite for_e 
+2022-11-09 09:53:21.626612 deleting metabolite glc_D_e 
+2022-11-09 09:53:21.632352 deleting metabolite glx_c 
+2022-11-09 09:53:21.638023 deleting metabolite h2_e 
+2022-11-09 09:53:21.645079 deleting metabolite icit_c 
+2022-11-09 09:53:21.650618 deleting metabolite lac_D_c 
+2022-11-09 09:53:21.656094 deleting metabolite lac_D_e 
+2022-11-09 09:53:21.662301 deleting metabolite nh4_c 
+2022-11-09 09:53:21.668109 deleting metabolite nh4_e 
+2022-11-09 09:53:21.675073 deleting metabolite succ_e 
+2022-11-09 09:53:21.682017 deleting metabolite succoa_c 
+2022-11-09 09:53:21.685557 merging 1 ...
+2022-11-09 09:53:21.685562    [-] GAPD factor: 1 
+2022-11-09 09:53:21.685606    [+] PGK factor: 1 
+2022-11-09 09:53:21.685622    [>] PGK:GAPD
+2022-11-09 09:53:21.685629 merging 1 ...
+2022-11-09 09:53:21.685631    [-] PGM factor: 1 
+2022-11-09 09:53:21.685643    [+] ENO factor: 1 
+2022-11-09 09:53:21.685653    [>] ENO:PGM
+2022-11-09 09:53:21.685657 merging 2 ...
+2022-11-09 09:53:21.685660    [-] PGK:GAPD factor: 1 
+2022-11-09 09:53:21.685670    [+] Biomass_Ecoli_core_w_GAM factor: 821/500 
+2022-11-09 09:53:21.685684    [>] Biomass_Ecoli_core_w_GAM:PGK:GAPD
+2022-11-09 09:53:21.685686    [+] ENO:PGM factor: 1 
+2022-11-09 09:53:21.685697    [>] ENO:PGM:PGK:GAPD
+2022-11-09 09:53:21.685702 merging 2 ...
+2022-11-09 09:53:21.685704    [-] PGL factor: 1 
+2022-11-09 09:53:21.685714    [+] EDP1 factor: 1 
+2022-11-09 09:53:21.685724    [>] EDP1:PGL
+2022-11-09 09:53:21.685726    [+] GND factor: 1 
+2022-11-09 09:53:21.685736    [>] GND:PGL
+2022-11-09 09:53:21.685740 merging 2 ...
+2022-11-09 09:53:21.685744    [-] G6PDH2r factor: 1 
+2022-11-09 09:53:21.685754    [+] EDP1:PGL factor: 1 
+2022-11-09 09:53:21.685764    [>] EDP1:PGL:G6PDH2r
+2022-11-09 09:53:21.685767    [+] GND:PGL factor: 1 
+2022-11-09 09:53:21.685776    [>] GND:PGL:G6PDH2r
+2022-11-09 09:53:21.685780 merging 2 ...
+2022-11-09 09:53:21.685783    [-] ACt2r factor: 1 
+2022-11-09 09:53:21.685792    [+] ACKr factor: 1 
+2022-11-09 09:53:21.685802    [>] ACKr:ACt2r
+2022-11-09 09:53:21.685804    [+] FEM2 factor: 1 
+2022-11-09 09:53:21.685814    [>] FEM2:ACt2r
+2022-11-09 09:53:21.685818 merging 2 ...
+2022-11-09 09:53:21.685820    [-] EX_ac_e factor: 1 
+2022-11-09 09:53:21.685830    [+] ACKr:ACt2r factor: 1 
+2022-11-09 09:53:21.685839    [>] ACKr:ACt2r:EX_ac_e
+2022-11-09 09:53:21.685842    [+] FEM2:ACt2r factor: 1 
+2022-11-09 09:53:21.685851    [>] FEM2:ACt2r:EX_ac_e
+2022-11-09 09:53:21.685855 merging 2 ...
+2022-11-09 09:53:21.685858    [-] ALCD2x factor: 1 
+2022-11-09 09:53:21.685867    [+] ACALD factor: 1 
+2022-11-09 09:53:21.685877    [>] ACALD:ALCD2x
+2022-11-09 09:53:21.685879    [+] FEM9 factor: 1 
+2022-11-09 09:53:21.685889    [>] FEM9:ALCD2x
+2022-11-09 09:53:21.685893 merging 1 ...
+2022-11-09 09:53:21.685895    [-] ACONTa factor: 1 
+2022-11-09 09:53:21.685905    [+] ACONTb factor: 1 
+2022-11-09 09:53:21.685914    [>] ACONTb:ACONTa
+2022-11-09 09:53:21.685918 merging 1 ...
+2022-11-09 09:53:21.685921    [-] FEM7 factor: 1 
+2022-11-09 09:53:21.685930    [+] ACKr:ACt2r:EX_ac_e factor: 1 
+2022-11-09 09:53:21.685939    [>] ACKr:ACt2r:EX_ac_e:FEM7
+2022-11-09 09:53:21.685943 merging 2 ...
+2022-11-09 09:53:21.685946    [-] ICDHyr factor: 1 
+2022-11-09 09:53:21.685955    [+] AKGDH factor: 1 
+2022-11-09 09:53:21.685967    [>] AKGDH:ICDHyr
+2022-11-09 09:53:21.685969    [+] Biomass_Ecoli_core_w_GAM:PGK:GAPD factor: 713/821 
+2022-11-09 09:53:21.685979    [>] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr
+2022-11-09 09:53:21.685983 merging 1 ...
+2022-11-09 09:53:21.685986    [-] PPS factor: 1 
+2022-11-09 09:53:21.685995    [+] ADK1 factor: 1 
+2022-11-09 09:53:21.686005    [>] ADK1:PPS
+2022-11-09 09:53:21.686009 merging 1 ...
+2022-11-09 09:53:21.686012    [-] CS factor: 1 
+2022-11-09 09:53:21.686021    [+] ACONTb:ACONTa factor: 1 
+2022-11-09 09:53:21.686031    [>] ACONTb:ACONTa:CS
+2022-11-09 09:53:21.686035 merging 1 ...
+2022-11-09 09:53:21.686037    [-] CO2t factor: 1 
+2022-11-09 09:53:21.686046    [+] EX_co2_e factor: 1 
+2022-11-09 09:53:21.686056    [>] EX_co2_e:CO2t
+2022-11-09 09:53:21.686061 merging 1 ...
+2022-11-09 09:53:21.686063    [-] EDP1:PGL:G6PDH2r factor: 1 
+2022-11-09 09:53:21.686073    [+] EDP2 factor: 1 
+2022-11-09 09:53:21.686082    [>] EDP2:EDP1:PGL:G6PDH2r
+2022-11-09 09:53:21.686086 merging 2 ...
+2022-11-09 09:53:21.686088    [-] ETOHt2r factor: 1 
+2022-11-09 09:53:21.686098    [+] ACALD:ALCD2x factor: 1 
+2022-11-09 09:53:21.686107    [>] ACALD:ALCD2x:ETOHt2r
+2022-11-09 09:53:21.686110    [+] FEM9:ALCD2x factor: 1 
+2022-11-09 09:53:21.686119    [>] FEM9:ALCD2x:ETOHt2r
+2022-11-09 09:53:21.686123 merging 2 ...
+2022-11-09 09:53:21.686126    [-] EX_etoh_e factor: 1 
+2022-11-09 09:53:21.686135    [+] ACALD:ALCD2x:ETOHt2r factor: 1 
+2022-11-09 09:53:21.686145    [>] ACALD:ALCD2x:ETOHt2r:EX_etoh_e
+2022-11-09 09:53:21.686147    [+] FEM9:ALCD2x:ETOHt2r factor: 1 
+2022-11-09 09:53:21.686157    [>] FEM9:ALCD2x:ETOHt2r:EX_etoh_e
+2022-11-09 09:53:21.686161 merging 2 ...
+2022-11-09 09:53:21.686163    [-] PFL factor: 1 
+2022-11-09 09:53:21.686173    [+] FEM4 factor: 1 
+2022-11-09 09:53:21.686182    [>] FEM4:PFL
+2022-11-09 09:53:21.686185    [+] FORti factor: 1 
+2022-11-09 09:53:21.686194    [>] FORti:PFL
+2022-11-09 09:53:21.686198 merging 1 ...
+2022-11-09 09:53:21.686200    [-] FORti:PFL factor: 1 
+2022-11-09 09:53:21.686212    [+] EX_for_e factor: 1 
+2022-11-09 09:53:21.686221    [>] EX_for_e:FORti:PFL
+2022-11-09 09:53:21.686225 merging 1 ...
+2022-11-09 09:53:21.686228    [-] EX_glc_e factor: 1 
+2022-11-09 09:53:21.686237    [+] GLCpts factor: 1 
+2022-11-09 09:53:21.686246    [>] GLCpts:EX_glc_e
+2022-11-09 09:53:21.686250 merging 1 ...
+2022-11-09 09:53:21.686253    [-] ICL factor: 1 
+2022-11-09 09:53:21.686262    [+] MALS factor: 1 
+2022-11-09 09:53:21.686272    [>] MALS:ICL
+2022-11-09 09:53:21.686276 merging 1 ...
+2022-11-09 09:53:21.686278    [-] FEM4:PFL factor: 1 
+2022-11-09 09:53:21.686287    [+] EX_h2_e factor: 1 
+2022-11-09 09:53:21.686297    [>] EX_h2_e:FEM4:PFL
+2022-11-09 09:53:21.686301 merging 3 ...
+2022-11-09 09:53:21.686303    [-] ACONTb:ACONTa:CS factor: 1 
+2022-11-09 09:53:21.686312    [+] AKGDH:ICDHyr factor: 1 
+2022-11-09 09:53:21.686322    [>] AKGDH:ICDHyr:ACONTb:ACONTa:CS
+2022-11-09 09:53:21.686324    [+] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr factor: 1 
+2022-11-09 09:53:21.686334    [>] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr:ACONTb:ACONTa:CS
+2022-11-09 09:53:21.686336    [+] MALS:ICL factor: 1 
+2022-11-09 09:53:21.686346    [>] MALS:ICL:ACONTb:ACONTa:CS
+2022-11-09 09:53:21.686350 merging 1 ...
+2022-11-09 09:53:21.686352    [-] LDH_D factor: 1 
+2022-11-09 09:53:21.686362    [+] D_LACt2 factor: 1 
+2022-11-09 09:53:21.686372    [>] D_LACt2:LDH_D
+2022-11-09 09:53:21.686375 merging 1 ...
+2022-11-09 09:53:21.686378    [-] D_LACt2:LDH_D factor: 1 
+2022-11-09 09:53:21.686387    [+] EX_lac_D_e factor: 1 
+2022-11-09 09:53:21.686396    [>] EX_lac_D_e:D_LACt2:LDH_D
+2022-11-09 09:53:21.686401 merging 1 ...
+2022-11-09 09:53:21.686403    [-] NH4t factor: 1 
+2022-11-09 09:53:21.686424    [+] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr:ACONTb:ACONTa:CS factor: 6251/713 
+2022-11-09 09:53:21.686435    [>] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr:ACONTb:ACONTa:CS:NH4t
+2022-11-09 09:53:21.686439 merging 1 ...
+2022-11-09 09:53:21.686442    [-] EX_nh4_e factor: 1 
+2022-11-09 09:53:21.686452    [+] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr:ACONTb:ACONTa:CS:NH4t factor: 1 
+2022-11-09 09:53:21.686462    [>] Biomass_Ecoli_core_w_GAM:PGK:GAPD:ICDHyr:ACONTb:ACONTa:CS:NH4t:EX_nh4_e
+2022-11-09 09:53:21.686466 merging 1 ...
+2022-11-09 09:53:21.686468    [-] SUCCt3 factor: 1 
+2022-11-09 09:53:21.686478    [+] EX_succ_e factor: 1 
+2022-11-09 09:53:21.686488    [>] EX_succ_e:SUCCt3
+2022-11-09 09:53:21.686492 merging 1 ...
+2022-11-09 09:53:21.686495    [-] AKGDH:ICDHyr:ACONTb:ACONTa:CS factor: 1 
+2022-11-09 09:53:21.686504    [+] SUCOAS factor: 1 
+2022-11-09 09:53:21.686515    [>] SUCOAS:AKGDH:ICDHyr:ACONTb:ACONTa:CS
+2022-11-09 09:53:21.689192 *** efmlrs.preprocessing.compressions.nullspace ***
+2022-11-09 09:53:21.744574 merging ...
+2022-11-09 09:53:21.744580    [-] TPI factor: 1 
+2022-11-09 09:53:21.744598    [+] FBA 
+2022-11-09 09:53:21.744601    [>] FBA:TPI 
+2022-11-09 09:53:21.871113 merging ...
+2022-11-09 09:53:21.871118    [-] TKT1 factor: 1 
+2022-11-09 09:53:21.871133    [+] TALA 
+2022-11-09 09:53:21.871136    [>] TALA:TKT1 
+2022-11-09 09:53:21.880999 deleting metabolite s7p_c 
+2022-11-09 09:53:21.881009 deleting metabolite dhap_c 
+2022-11-09 09:53:21.909519 *** efmlrs.preprocessing.compressions.echelon ***
+2022-11-09 09:53:21.936848 deleting metabolite q8h2_c 
+2022-11-09 09:53:21.936856 deleting metabolite nadph_c 
+2022-11-09 09:53:21.936860 deleting metabolite nadh_c 
+2022-11-09 09:53:21.936863 deleting metabolite coa_c 
+2022-11-09 09:53:21.936867 deleting metabolite atp_c 
+2022-11-09 09:53:21.956074 *** efmlrs.preprocessing.compressions.deadend ***
+2022-11-09 09:53:21.959098 *** efmlrs.preprocessing.compressions.many2one ***
+2022-11-09 09:53:21.966737 *** efmlrs.preprocessing.compressions.nullspace ***
+2022-11-09 09:53:22.005396 *** efmlrs.preprocessing.compressions.echelon ***
